@@ -1,0 +1,7 @@
+pymongo
+jsoncomment
+flask
+flask_bootstrap
+flask_script
+requests
+waitress

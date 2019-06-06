@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		{% block head %}
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='bootstrap-table/src/bootstrap-table.css') }}">
+		<script src="/static/bootstrap/jquery.min.js?bootstrap=3.3.7.1.dev1"></script>
+		<script src="/static/bootstrap/js/bootstrap.min.js?bootstrap=3.3.7.1.dev1"></script>
+		<link href="/static/bootstrap/css/bootstrap.min.css?bootstrap=3.3.7.1.dev1" rel="stylesheet">
+		<script src="/static/bootstrap-table/src/bootstrap-table.js"></script>
+  	    <script src="/static/bootstrap-table/src/bootstrap-table-en-US.js"></script>
+  	    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  	    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8">
+		{% endblock %}
+	
+	</head>
+
+
+{% block content %}
+
+<body>
+
+<div style="margin-left: 20px;margin-right: 20px;margin-top: 20px;margin-bottom: 20px;">	
+   	
+	
+	<div>
+			<div>
+				<form action="" method="POST">
+				Transaction: <input type="text" name="transNum" /> <button type="Submit">Search</button>
+				</form>
+				<br/>
+				<form action="" method="POST">
+				Date Range: <input type="text" name="dateRange" /> <button type="Submit">Search</button>
+				</form>
+
+<script>
+$(function() {
+  $('input[name="dateRange"]').daterangepicker({
+    timePicker: true,
+    timePicker24Hour: true,
+    locale: {
+      format: 'YYYY-MM-DD hh:mm:ss'
+    }
+  });
+});
+</script>
+				</br>
+				<form action="" method="POST">
+				Ticket Number: <input type="text" name="ticketNum"/>  <button type="Submit">Search</button>
+				</form>
+			</div>
+
+			
+		</div>
+	
+	<table data-toggle="table" data-pagination="true" data-search="false" data-toggle="table" class="table-no-bordered" data-classes="table-no-bordered">
+	  <thead>
+	    <tr>
+	      <th data-sortable="true" >Transaction #</th>
+	      <th data-sortable="true" >Date Ran</th>
+	      <th data-sortable="true" >Ticket Number</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+
+	  {% for trans in data %}
+	    <tr>
+	      <td><a href="/transacs/{{ trans['transId'] }}" title="Transaction {{ trans['transId'] }}">{{ trans['transId'] }}</a></th>
+	      <td>{{ trans['dateUserRan'] }}</td>
+	      <td>{{ trans['ticketNum'] }}</td>
+	    </tr>
+	   {% endfor %}
+
+	  </tbody>
+	</table>
+
+</div>
+
+</body>
+</html>
+
+{% endblock %}
+

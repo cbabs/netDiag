@@ -1,0 +1,346 @@
+{"userId"  : "
+ag0394v 
+  ", "ticketNum" : "
+1234567 
+  ", "runTmStmp" : "
+04/29/2019: 9:18:38.97 
+  ", "ip" : "
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-RGFH0PI
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Peer-Peer
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Realtek PCIe FE Family Controller
+   Physical Address. . . . . . . . . : EC-8E-B5-0C-C7-B2
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter vEthernet (Default Switch):
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Hyper-V Virtual Ethernet Adapter
+   Physical Address. . . . . . . . . : 02-15-22-9F-A0-43
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::6014:470c:d593:2cf0%3(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 172.27.182.17(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.240
+   Default Gateway . . . . . . . . . : 
+   DHCPv6 IAID . . . . . . . . . . . : 872420701
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-21-16-57-87-EC-8E-B5-0C-C7-B2
+   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
+                                       fec0:0:0:ffff::2%1
+                                       fec0:0:0:ffff::3%1
+   NetBIOS over Tcpip. . . . . . . . : Disabled
+
+Ethernet adapter vEthernet (nat):
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Hyper-V Virtual Ethernet Adapter #3
+   Physical Address. . . . . . . . . : 00-15-5D-92-E0-4F
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::292d:8cf7:2db4:6e76%31(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 172.18.48.1(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.240.0
+   Default Gateway . . . . . . . . . : 
+   DHCPv6 IAID . . . . . . . . . . . : 1107301725
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-21-16-57-87-EC-8E-B5-0C-C7-B2
+   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
+                                       fec0:0:0:ffff::2%1
+                                       fec0:0:0:ffff::3%1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Ethernet adapter VirtualBox Host-Only Network #3:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : VirtualBox Host-Only Ethernet Adapter #3
+   Physical Address. . . . . . . . . : 0A-00-27-00-00-26
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::a40c:57f3:2064:a98e%38(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.211.1(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 
+   DHCPv6 IAID . . . . . . . . . . . : 1208614951
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-21-16-57-87-EC-8E-B5-0C-C7-B2
+   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
+                                       fec0:0:0:ffff::2%1
+                                       fec0:0:0:ffff::3%1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Wireless LAN adapter Local Area Connection* 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter
+   Physical Address. . . . . . . . . : B8-81-98-2F-26-1A
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Local Area Connection* 3:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #3
+   Physical Address. . . . . . . . . : BA-81-98-2F-26-19
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter Ethernet 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : TAP-Windows Adapter V9
+   Physical Address. . . . . . . . . : 00-FF-5C-E5-67-EA
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter Ethernet 5:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : TAP-Windows Adapter V9 #2
+   Physical Address. . . . . . . . . : 00-FF-87-B7-B9-1D
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter Ethernet 6:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : TAP-Windows Adapter V9 #3
+   Physical Address. . . . . . . . . : 00-FF-F3-ED-B3-9B
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter Ethernet 7:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : TAP-Windows Adapter V9 #4
+   Physical Address. . . . . . . . . : 00-FF-45-5B-CF-0D
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter Ethernet 8:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : TAP-Windows Adapter V9 #5
+   Physical Address. . . . . . . . . : 00-FF-E1-EE-6E-9E
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter Ethernet 9:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : TAP-Windows Adapter V9 #6
+   Physical Address. . . . . . . . . : 00-FF-08-0C-E4-0E
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter Ethernet 10:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : TAP-Windows Adapter V9 #7
+   Physical Address. . . . . . . . . : 00-FF-8B-56-70-F8
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::ddd7:7061:6190:3430%21(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 10.8.0.10(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.252
+   Lease Obtained. . . . . . . . . . : Monday, April 29, 2019 8:04:36 AM
+   Lease Expires . . . . . . . . . . : Tuesday, April 28, 2020 8:04:37 AM
+   Default Gateway . . . . . . . . . : 10.8.0.9
+   DHCP Server . . . . . . . . . . . : 10.8.0.9
+   DHCPv6 IAID . . . . . . . . . . . : 1174470539
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-21-16-57-87-EC-8E-B5-0C-C7-B2
+   DNS Servers . . . . . . . . . . . : 8.8.8.8
+                                       4.2.2.2
+   NetBIOS over Tcpip. . . . . . . . : Disabled
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Intel(R) Dual Band Wireless-AC 3165
+   Physical Address. . . . . . . . . : B8-81-98-2F-26-19
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::d4bc:5074:91d6:4edb%34(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 10.100.1.165(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Monday, April 29, 2019 8:04:12 AM
+   Lease Expires . . . . . . . . . . : Monday, April 29, 2019 9:24:13 AM
+   Default Gateway . . . . . . . . . : 10.100.1.1
+   DHCP Server . . . . . . . . . . . : 10.100.1.2
+   DHCPv6 IAID . . . . . . . . . . . : 1840808344
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-21-16-57-87-EC-8E-B5-0C-C7-B2
+   DNS Servers . . . . . . . . . . . : 8.8.8.8
+                                       4.2.2.2
+   NetBIOS over Tcpip. . . . . . . . : Disabled
+
+Ethernet adapter Bluetooth Network Connection 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Bluetooth Device (Personal Area Network) #2
+   Physical Address. . . . . . . . . : B8-81-98-2F-26-1D
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+  ", "wlanStat" : "
+
+There is 1 interface on the system: 
+
+    Name                   : Wi-Fi
+    Description            : Intel(R) Dual Band Wireless-AC 3165
+    GUID                   : d4218de4-31ac-4028-9b53-37a8f28bf63b
+    Physical address       : b8:81:98:2f:26:19
+    State                  : connected
+    SSID                   : Qoya-Mgmt
+    BSSID                  : 18:e8:29:57:8d:8c
+    Network type           : Infrastructure
+    Radio type             : 802.11n
+    Authentication         : WPA2-Personal
+    Cipher                 : CCMP
+    Connection mode        : Profile
+    Channel                : 6
+    Receive rate (Mbps)    : 72.2
+    Transmit rate (Mbps)   : 72.2
+    Signal                 : 99% 
+    Profile                : Qoya-Mgmt 
+
+    Hosted network status  : Not available
+
+  ",  "pgPubDns" : "
+
+Pinging 8.8.8.8 with 32 bytes of data:
+Reply from 8.8.8.8: bytes=32 time=131ms TTL=120
+Reply from 8.8.8.8: bytes=32 time=129ms TTL=120
+Reply from 8.8.8.8: bytes=32 time=132ms TTL=120
+Reply from 8.8.8.8: bytes=32 time=129ms TTL=120
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 129ms, Maximum = 132ms, Average = 130ms
+  ", "pgSdcDns" : "
+
+Pinging 10.15.98.64 with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 10.15.98.64:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+  ", "pgNdcDns" : "
+
+Pinging 10.23.98.64 with 32 bytes of data:
+Reply from 38.140.174.89: Destination net unreachable.
+Request timed out.
+Request timed out.
+Reply from 38.140.174.89: Destination net unreachable.
+
+Ping statistics for 10.23.98.64:
+    Packets: Sent = 4, Received = 2, Lost = 2 (50% loss),
+  ", "pgTnGov" : "
+
+Pinging tn.gov [170.141.165.146] with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 170.141.165.146:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+  ", "trcRtPubDns" : "
+
+Tracing route to 8.8.8.8 over a maximum of 15 hops
+
+  1   111 ms   118 ms   115 ms  10.8.0.1 
+  2     *        *        *     Request timed out.
+  3   112 ms   126 ms   127 ms  192.168.250.253 
+  4   135 ms   133 ms   140 ms  38.140.174.89 
+  5   139 ms   140 ms   135 ms  154.54.31.25 
+  6   136 ms   135 ms   132 ms  154.54.6.102 
+  7   131 ms   136 ms   137 ms  154.54.11.226 
+  8   130 ms   137 ms   123 ms  64.86.113.149 
+  9   137 ms   128 ms   132 ms  64.86.113.106 
+ 10   125 ms   129 ms   125 ms  108.170.249.65 
+ 11   128 ms   128 ms   128 ms  216.239.54.231 
+ 12   127 ms   124 ms   122 ms  8.8.8.8 
+
+Trace complete.
+  ", "trcRtSdcDns" : "
+
+Tracing route to 10.15.98.64 over a maximum of 10 hops
+
+  1   112 ms   115 ms   111 ms  10.8.0.1 
+  2     *        *        *     Request timed out.
+  3   116 ms   120 ms   122 ms  192.168.250.253 
+  4     *        *        *     Request timed out.
+  5  38.140.174.89  reports: Destination net unreachable.
+
+Trace complete.
+  ", "trcRtNdcDns" : "
+
+Tracing route to 10.23.98.64 over a maximum of 10 hops
+
+  1   123 ms   111 ms   113 ms  10.8.0.1 
+  2     *        *        *     Request timed out.
+  3   120 ms   114 ms   128 ms  192.168.250.253 
+  4     *        *        *     Request timed out.
+  5     *     38.140.174.89  reports: Destination net unreachable.
+
+Trace complete.
+  ", "trcRtTnGov" : "
+
+Tracing route to tn.gov [170.141.165.146]
+over a maximum of 10 hops:
+
+  1   110 ms   118 ms   119 ms  10.8.0.1 
+  2     *        *        *     Request timed out.
+  3   112 ms   122 ms   123 ms  192.168.250.253 
+  4   134 ms   138 ms   135 ms  38.140.174.89 
+  5   140 ms   143 ms   138 ms  154.54.5.153 
+  6   147 ms   138 ms   146 ms  154.54.27.166 
+  7   142 ms   140 ms   140 ms  192.205.36.237 
+  8   146 ms   148 ms   156 ms  12.122.117.122 
+  9   146 ms   142 ms   144 ms  12.122.2.42 
+ 10   143 ms   171 ms   154 ms  12.122.163.129 
+
+Trace complete.
+  ", "topAppMem" : "
+
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+dwm.exe                       1312 Console                    1     46,852 K
+Memory Compression            2232 Services                   0    593,476 K
+explorer.exe                  7064 Console                    1    135,732 K
+ShellExperienceHost.exe       9648 Console                    1     51,412 K
+SearchUI.exe                  9788 Console                    1     62,236 K
+Dropbox.exe                  23140 Console                    1     97,348 K
+vsserv.exe                   13732 Services                   0    167,576 K
+EXCEL.EXE                     5348 Console                    1     74,096 K
+SkypeApp.exe                 21080 Console                    1    123,856 K
+eclipse.exe                  24760 Console                    1    425,188 K
+robo3t.exe                    4244 Console                    1     62,488 K
+firefox.exe                   9284 Console                    1    211,136 K
+firefox.exe                  17804 Console                    1     94,764 K
+firefox.exe                  18712 Console                    1     75,148 K
+firefox.exe                  27688 Console                    1    126,648 K
+firefox.exe                  16164 Console                    1    100,900 K
+pritunl.exe                  27248 Console                    1     57,384 K
+pritunl.exe                  24856 Console                    1     41,980 K
+pritunl.exe                  23768 Console                    1     72,876 K
+  "}

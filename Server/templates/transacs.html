@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+	<head>
+	{% block head %}
+			<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='bootstrap-table/src/bootstrap-table.css') }}">
+	<link href="/static/bootstrap/css/bootstrap.min.css?bootstrap=3.3.7.1.dev1" rel="stylesheet">
+	<script src="/static/bootstrap/jquery.min.js?bootstrap=3.3.7.1.dev1"></script>
+	<script src="/static/bootstrap/js/bootstrap.min.js?bootstrap=3.3.7.1.dev1"></script>
+	<script src="/static/bootstrap-table/src/bootstrap-table.js"></script>
+  	<script src="/static/bootstrap-table/src/bootstrap-table-en-US.js"></script>	
+	<link href="/static/json-viewer/jquery.json-viewer.css" rel="stylesheet">
+	
+	<script type="text/javascript" src="/static/json-viewer/jquery.json-viewer.js"></script>
+	<script type="text/javascript">
+	
+
+	var transacData = JSON.parse('{{ data|tojson|safe }}');
+	console.log(transacData);
+
+	
+	</script>
+	</head>
+
+
+
+
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="text-center">
+	<table data-toggle="table" data-pagination="true" data-search="false" data-toggle="table" class="table-no-bordered" data-classes="table-no-bordered">
+	  <thead>
+	    <tr>
+	      <th >Name</th>
+	      <th >State</th>
+	      <th>Loss</th>
+	      <th >Latency</th>
+	      <th >Message</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+
+	{% for k,v in data['statusDict'].items() %}
+	    <tr>
+	      <td>{{ k }}</td>
+	      <td>{{ v['State'] }}</td>
+	      <td>{{ v['Ping Loss'] }}</td>
+	      <td>{{ v['Average Latency'] }}</td>
+	      <td>{{ v['Message'] }}</td>
+	    </tr>
+	   {% endfor %}
+	   
+	   </tbody>
+	 </table>
+	  
+
+</div>
+
+<div style="margin-left: 20px;margin-right: 20px;">
+	<div id="jsonReturn">
+	
+		{% if data %}
+	
+			<pre id="json-renderer"></pre>
+	
+		{% endif %}
+	
+		<br/>
+	
+	</div>
+</div>
+
+
+
+	<script src="/static/bootstrap/jquery.min.js?bootstrap=3.3.7.1.dev1"></script>
+
+	<script type="text/javascript" src="/static/json-viewer/jquery.json-viewer.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			var data = JSON.parse('{{ data|tojson|safe }}');
+			var processes = data["procInfo"]
+
+				$('#json-renderer').jsonViewer(data, {collapsed: false, withQuotes: true});
+			});
+
+	</script>
+
+{% endblock %}
+</html>

@@ -1,0 +1,129 @@
+
+<!doctype html>
+<html>
+	<head>
+		{% block head %}
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+		<script src="/static/bootstrap/jquery.min.js?bootstrap=3.3.7.1.dev1"></script>
+		<script src="/static/bootstrap/js/bootstrap.min.js?bootstrap=3.3.7.1.dev1"></script>
+		<link href="/static/bootstrap/css/bootstrap.min.css?bootstrap=3.3.7.1.dev1" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8">
+		<title>{% block title %}{% endblock %} - FlaskyACI - ACI for humans</title>
+		{% endblock %}
+	
+	</head>
+<body>
+
+{% block body %}
+	
+	{% if sideMenu %}
+
+
+
+
+	<div class="wrapper">
+
+		
+		{% block sidebar %}
+		<nav id="sidebar">
+			<!-- Sidebar Header -->
+			<div class="sidebar-header">
+				<h3>{{ sideMenu['menuName'].capitalize() }} Menu</h3>
+			</div>
+
+			<!-- Sidebar Links -->
+			<ul class="list-unstyled components">
+
+				{% for menuItem in sideMenu['items'] %}
+				
+				<li><a href="{{ menuItem['url'] }}" title="{{ menuItem['desc'] }}">{{ menuItem['name'] }}</a></li>
+			
+				{% endfor %}
+				
+				<br>
+
+				<li><a href="http://www.bluegreenit.com">Contact</a></li>
+			</ul>
+		</nav>
+		
+		{% endblock %}
+		
+		
+		<!-- Page Content Holder -->
+            
+				
+		{% block nav %}
+			<div id="content">	
+			
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+
+                        
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        
+                            <ul class="nav navbar-nav navbar-right">
+                       	
+                                <li><a href="/transactions">Tickets</a></li>
+
+								
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+				
+				{% endblock %}
+				{% block content %}
+                <h2>{% if title %} {% print(title) %}{% endif %}</h2>
+                <p></p>
+                
+                {% endblock %}
+            </div>
+
+	</div>
+
+
+
+	<!-- <script src="/static/bootstrap/jquery.min.js?bootstrap=3.3.7.1.dev1"></script> -->
+    <!-- <script src="/static/bootstrap/js/bootstrap.min.js?bootstrap=3.3.7.1.dev1"></script> -->
+	<script src="/static/bootstrap-table/src/bootstrap-table.js"></script>
+    <script src="/static/bootstrap-table/src/bootstrap-table-en-US.js"></script>
+	
+		<script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                 });
+             });
+         </script>
+         
+ 	
+	
+    <script type="text/javascript" src="/static/json-viewer/jquery.json-viewer.js"></script>
+	
+
+{% endif %}
+
+
+	
+	
+	
+	
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	<div id="messages">
+	<ul class=flashes style="color:red">
+		{% for message in messages %}
+		<li>{{ message }}</li>
+		{% endfor %}
+	</ul>
+	</div>
+	{% endif %}
+	{% endwith %}
+
+
+{% endblock %}
+
+</body>
+</html>
