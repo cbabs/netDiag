@@ -1,3 +1,11 @@
 #!/bin/sh
 source venv/bin/activate
-python ./netDiag/Server/startWebApp.py
+
+if [ $DEBUG = TRUE ];
+then
+  python ./netDiag/Server/manage.py runserver
+else
+  python ./netDiag/Server/startWebApp.py
+fi
+
+
