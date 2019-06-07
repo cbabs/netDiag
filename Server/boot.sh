@@ -1,3 +1,3 @@
 #!/bin/sh
 source venv/bin/activate
-python ./startWebApp.py
+python ./netDiag/Server/startWebApp.py
