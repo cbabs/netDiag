@@ -5,7 +5,7 @@ RUN adduser -D netdiag
 WORKDIR /home/netdiag
 
 RUN python -m venv venv
-COPY netDiag netDiag
+RUN git clone https://github.com/cbabs/netDiag.git
 RUN venv/bin/pip install -r ./netDiag/Server/requirements.txt
 
 RUN chmod +x ./netDiag/Server/boot.sh
