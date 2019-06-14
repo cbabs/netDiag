@@ -54,6 +54,7 @@ class NetDiag(object):
             "userId": jsonData["userName"].replace("\n","").replace("\\", "/"),
             "hostName": jsonData["hostName"].replace("\n",""),
             "ticketNum": jsonData["ticketNum"],
+            "systemInfo": jsonData["systemInfo"],
             "ipconfig": self.fltrIpInfo(ip),
             "traceGoglDns": self.fltrTracRt(jsonData["trcRtPubDns"]),
             "traceSdcDns": self.fltrTracRt(jsonData["trcRtSdcDns"]),

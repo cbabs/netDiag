@@ -57,7 +57,8 @@ def main():
     tStamp = datetime.datetime.now()
 
 
-    taskDict = {"trcRtPubDns": "tracert -d -w 250 -h 15 8.8.8.9",
+    taskDict = {"systemInfo": "systeminfo",
+                "trcRtPubDns": "tracert -d -w 250 -h 15 8.8.8.9",
                  "trcRtNdcDns": "tracert -d -w 250 -h 10 10.23.98.64",
                  "trcRtSdcDns": "tracert -d -w 250 -h 10 10.15.98.64",
                  "trcRtTnGov":"tracert -d -w 250 -h 10 tn.gov",
@@ -90,7 +91,7 @@ def main():
     #for k,v in retrnDict.items():
     # print("{}: {}".format(k, v))
 
-    diag = NetdiagClient("127.0.0.1", 8443)
+    diag = NetdiagClient("10.8.4.128", 30843)
 
     diag.postData(retrnDict)
 

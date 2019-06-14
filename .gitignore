@@ -106,5 +106,9 @@ venv.bak/
 # Eclipse
 .project
 
+./client/build/
+./client/dist/
+./client/*.spec
+
 # Ignore all files that begin with tests
 test*
