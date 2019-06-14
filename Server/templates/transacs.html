@@ -8,17 +8,13 @@
 	<script src="/static/bootstrap/jquery.min.js?bootstrap=3.3.7.1.dev1"></script>
 	<script src="/static/bootstrap/js/bootstrap.min.js?bootstrap=3.3.7.1.dev1"></script>
 	<script src="/static/bootstrap-table/src/bootstrap-table.js"></script>
-  	<script src="/static/bootstrap-table/src/bootstrap-table-en-US.js"></script>	
+  	<script src="/static/bootstrap-table/src/bootstrap-table-en-US.js"></script>
 	<link href="/static/json-viewer/jquery.json-viewer.css" rel="stylesheet">
-	
+
 	<script type="text/javascript" src="/static/json-viewer/jquery.json-viewer.js"></script>
 	<script type="text/javascript">
-	
 
-	var transacData = JSON.parse('{{ data|tojson|safe }}');
-	console.log(transacData);
 
-	
 	</script>
 	</head>
 
@@ -53,24 +49,24 @@
 	      <td>{{ v['Message'] }}</td>
 	    </tr>
 	   {% endfor %}
-	   
+
 	   </tbody>
 	 </table>
-	  
+
 
 </div>
 
 <div style="margin-left: 20px;margin-right: 20px;">
 	<div id="jsonReturn">
-	
+
 		{% if data %}
-	
+
 			<pre id="json-renderer"></pre>
-	
+
 		{% endif %}
-	
+
 		<br/>
-	
+
 	</div>
 </div>
 
