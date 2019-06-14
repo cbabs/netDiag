@@ -1,8 +1,11 @@
-FROM python:3.6-alpine
+FROM python:3.7-alpine
 
 RUN adduser -D netdiag
 
 WORKDIR /home/netdiag
+
+RUN apk update && apk upgrade && \
+    apk add --no-cache git 
 
 RUN python -m venv venv
 RUN git clone https://github.com/cbabs/netDiag.git
