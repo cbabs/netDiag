@@ -54,7 +54,7 @@ class NetDiag(object):
             "userId": jsonData["userName"].replace("\n","").replace("\\", "/"),
             "hostName": jsonData["hostName"].replace("\n",""),
             "ticketNum": jsonData["ticketNum"],
-            "systemInfo": jsonData["systemInfo"],
+            "systemInfo": jsonData["systemInfo"].replace("\n","").replace("\\", "/"),
             "ipconfig": self.fltrIpInfo(ip),
             "traceGoglDns": self.fltrTracRt(jsonData["trcRtPubDns"]),
             "traceSdcDns": self.fltrTracRt(jsonData["trcRtSdcDns"]),
@@ -69,10 +69,8 @@ class NetDiag(object):
 
         statusDict = self.createStatusDict(diagRecord)
         diagRecord["statusDict"] = statusDict
-        print(diagRecord)
 
         self.sendTranToDbs(diagRecord)
-        print(diagRecord)
 
     # Process ping result and gives diag hints
     def procPingStatus(self, pingDict):

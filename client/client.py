@@ -88,10 +88,12 @@ def main():
         thrdVal.join()
         retrnDict[thrdKey]= thrdVal.retrnData
 
-    #for k,v in retrnDict.items():
-    # print("{}: {}".format(k, v))
+    for k,v in retrnDict.items():
+        print("{}: {}".format(k, v))
 
     diag = NetdiagClient("10.8.4.128", 30843)
+    #diag = NetdiagClient("127.0.0.1", 8443)
+
 
     diag.postData(retrnDict)
 
