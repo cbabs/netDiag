@@ -1,5 +1,5 @@
 pymongo
-jsoncomment
+websockets
 flask
 flask_bootstrap
 flask_script
