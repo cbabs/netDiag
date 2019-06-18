@@ -45,7 +45,7 @@ class NetDiag(object):
 
         jsonData = jsonData["netData"]
 
-        ip = jsonData["ipAdd"]
+        print(jsonData["systemInfo"])
 
         # Dict for transaction record
         diagRecord = {
@@ -55,12 +55,16 @@ class NetDiag(object):
             "hostName": jsonData["hostName"].replace("\n",""),
             "ticketNum": jsonData["ticketNum"],
             "systemInfo": jsonData["systemInfo"].replace("\n","").replace("\\", "/"),
-            "ipconfig": self.fltrIpInfo(ip),
+            "ipconfig": self.fltrIpInfo(jsonData["ipAdd"]),
             "traceGoglDns": self.fltrTracRt(jsonData["trcRtPubDns"]),
+            "traceOfc365": self.fltrTracRt(jsonData["trcRtOfc365"]),
+            "traceSrvcNow": self.fltrTracRt(jsonData["trcRtSrvcNow"]),
             "traceSdcDns": self.fltrTracRt(jsonData["trcRtSdcDns"]),
             "traceNdcDns": self.fltrTracRt(jsonData["trcRtNdcDns"]),
             "traceTnGov": self.fltrTracRt(jsonData["trcRtTnGov"]),
             "pingGoglDns": self.fltrPing(jsonData["pgPubDns"]),
+            "pingOfc365": self.fltrPing(jsonData["pgOfc365"]),
+            "pingSrvcNow": self.fltrPing(jsonData["pgSrvcNow"]),
             "pingSdcDns": self.fltrPing(jsonData["pgSdcDns"]),
             "pingNdclDns": self.fltrPing(jsonData["pgNdcDns"]),
             "pingTnGov": self.fltrPing(jsonData["pgTnGov"]),

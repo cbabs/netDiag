@@ -49,7 +49,7 @@ class NetdiagClient(object):
         res = requests.post(serverCall, json = {"netData" : jsonData})
 
         if res.ok:
-            print(res.json())
+            print()
 
 
 def main():
@@ -58,12 +58,16 @@ def main():
 
 
     taskDict = {"systemInfo": "systeminfo",
-                "trcRtPubDns": "tracert -d -w 250 -h 15 8.8.8.9",
+                "trcRtPubDns": "tracert -d -w 250 -h 15 8.8.8.8",
+                "trcRtOfc365": "tracert -d -w 250 -h 15 outlook.office365.com",
+                "trcRtSrvcNow": "tracert -d -w 250 -h 15 tn.service-now.com",
                  "trcRtNdcDns": "tracert -d -w 250 -h 10 10.23.98.64",
                  "trcRtSdcDns": "tracert -d -w 250 -h 10 10.15.98.64",
                  "trcRtTnGov":"tracert -d -w 250 -h 10 tn.gov",
                  "pgPubDns":"ping 8.8.8.8", "pgSdcDns":"ping 10.15.98.64",
                  "pgTnGov": "ping tn.gov", "pgNdcDns": "ping 10.23.98.64",
+                 "pgOfc365": "ping outlook.office365.com",
+                 "pgSrvcNow": "ping tn.service-now.com",
                  "wlanStat": "netsh wlan show interfaces",
                  "ipAdd": "ipconfig /all",
                  "topAppMem": 'tasklist /fi "memusage gt 40000"',
@@ -88,11 +92,14 @@ def main():
         thrdVal.join()
         retrnDict[thrdKey]= thrdVal.retrnData
 
-    for k,v in retrnDict.items():
-        print("{}: {}".format(k, v))
+    #for k,v in retrnDict.items():
+    #   print("{}: {}".format(k, v))
 
-    diag = NetdiagClient("10.8.4.128", 30843)
-    #diag = NetdiagClient("127.0.0.1", 8443)
+    #diag = NetdiagClient("10.8.4.128", 30843)
+
+    print(retrnDict["systemInfo"])
+
+    diag = NetdiagClient("127.0.0.1", 8443)
 
 
     diag.postData(retrnDict)
