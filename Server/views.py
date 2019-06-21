@@ -10,7 +10,7 @@ from functools import wraps
 
 from mongodb import MongoDb
 
-from server2 import NetDiag
+from server import NetDiag
 
 db = MongoDb()
 
