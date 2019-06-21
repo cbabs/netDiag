@@ -54,7 +54,7 @@ class NetDiag(object):
             "userId": jsonData["userName"].replace("\n","").replace("\\", "/"),
             "hostName": jsonData["hostName"].replace("\n",""),
             "ticketNum": jsonData["ticketNum"],
-            "systemInfo": jsonData["systemInfo"].replace("\n","").replace("\\", "/"),
+            "systemInfo": self.procSysInfo(jsonData["systemInfo"]),
             "ipconfig": self.fltrIpInfo(jsonData["ipAdd"]),
             "traceGoglDns": self.fltrTracRt(jsonData["trcRtPubDns"]),
             "traceOfc365": self.fltrTracRt(jsonData["trcRtOfc365"]),
@@ -75,6 +75,38 @@ class NetDiag(object):
         diagRecord["statusDict"] = statusDict
 
         self.sendTranToDbs(diagRecord)
+    
+    # Get vals from windows KV strings
+    def getValRegx(self, strng):
+        
+        retrnStr = re.search(r'(:\s+)(.*)', strng)
+        
+        
+        return retrnStr.group(2)
+    
+    # Get info from info and 
+    def procSysInfo(self, sysInfoData):
+        
+        # Conv strings into array per new line
+        sysInfoLines = sysInfoData.splitlines()
+        
+        retrnDict = {}
+        
+        valsWanted = ['OS Name:', 'OS Version:', 'Total Physical Memory:',
+                      'Available Physical Memory:', 'Virtual Memory: Max Size:',
+                      'Virtual Memory: Available:', 'Virtual Memory: In Use:']
+        
+        # Loop over array with desired info strings 
+        for val in valsWanted:
+            
+            # Loop over lines and if match, add to dict
+            for line in sysInfoLines:
+                
+                if val in line:
+                    lineVal = self.getValRegx(line)
+                    retrnDict[val.replace(" ", "")] = lineVal 
+     
+        return retrnDict
 
     # Process ping result and gives diag hints
     def procPingStatus(self, pingDict):
