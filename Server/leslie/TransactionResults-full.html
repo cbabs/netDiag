@@ -1,0 +1,1499 @@
+<html class="tn-html no-js" lang="en">
+<head>
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="pageID" content="42961">
+    <title>Transaction</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+	
+	<!--  Add the TNCore css  -->
+	<link rel="stylesheet" href="https://tn.gov/etc/clientlibs/tncore/main.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="http://10.8.4.128:30843/static/bootstrap-table/src/bootstrap-table.css">
+	<link href="http://10.8.4.128:30843/static/bootstrap/css/bootstrap.min.css?bootstrap=3.3.7.1.dev1" rel="stylesheet">
+	
+	
+		
+		
+	<script src="http://10.8.4.128:30843/static/bootstrap/jquery.min.js?bootstrap=3.3.7.1.dev1"></script>
+	<script src="http://10.8.4.128:30843/static/bootstrap/js/bootstrap.min.js?bootstrap=3.3.7.1.dev1"></script>
+	<script src="http://10.8.4.128:30843/static/bootstrap-table/src/bootstrap-table.js"></script>
+  	<script src="http://10.8.4.128:30843/static/bootstrap-table/src/bootstrap-table-en-US.js"></script>
+	<link href="http://10.8.4.128:30843/static/json-viewer/jquery.json-viewer.css" rel="stylesheet">
+
+	<script type="text/javascript" src="http://10.8.4.128:30843/static/json-viewer/jquery.json-viewer.js"></script>
+	<script type="text/javascript">
+
+
+	</script>
+
+	<style>
+	html {
+    font-size: 15px;
+}
+	body {
+		font-family: 'Open Sans', sans-serif;
+		letter-spacing: -0.025rem;
+		color: #131e29;
+		background: #f9f9f9 url(main/img/star-ball-bg.png) no-repeat 101% 75px;
+		background-attachment: fixed;
+	}
+		.text-center, .tab-content, .tn-tabs {
+			max-width: 1200px !important;
+			margin: 0 auto;	
+		}
+		.tn-tabs ul {
+			font-size: 15px;
+		}
+		a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+		display: none;
+		}
+		#sidebar ul li.active > a, a[aria-expanded="true"] {
+			background: transparent;
+		}
+		.tab-content {
+			margin-bottom: 20px;
+		}
+		/*.tab-content {
+		    border: 1px solid #ddd;
+			border-top-color: transparent;
+			padding: 20px;
+		}*/
+
+		.fixed-table-container thead th:first-child:not([data-not-first-th]) {
+			border-left: none;
+			border-top-left-radius: 0px;
+			-webkit-border-top-left-radius: 0px;
+			-moz-border-radius-topleft: 0px;
+		}
+		.fixed-table-body {
+			overflow-x: auto;
+			overflow-y: auto;
+			height:auto;
+		}
+		.fixed-table-container thead th {
+			height: 0;
+			padding: 0;
+			margin: 0;
+			background-color: #3D3E40;
+			color: #fff;
+			border-left: 1px solid #6E7073;
+		}
+		.table-no-bordered td{
+			padding: 10px;
+		
+		}
+		.table-no-bordered tr:nth-child(even){
+			background-color: #eee;
+		}
+		.form-holder {
+			margin: 0 auto;
+			max-width: 1200px;
+			padding-top: 20px;
+			width: 100%;
+		}
+		.form-holder form{
+			float: left;
+			margin-right: 40px;
+			height: 50px;
+		}
+		h4 {
+			padding-top: 20px;
+			font-weight: bold;
+		}
+		.hostinfo {
+			width: 100%;
+			max-width: 1200px;
+			background-color: #eee;
+			padding: 20px;
+			margin: 0 auto;
+			margin-bottom: 20px;
+		}
+		p, p strong {
+			color: #000;
+			}
+					
+		</style>
+	</head>
+
+
+
+
+
+
+
+
+
+
+<body>
+<!-- Begin Header -->
+    <div class="tn-header">
+        <header id="header">
+            <div class="row center-block top-nav">
+                <a class="logo tn-logo" href="#" data-logo="state-government">
+                    <div>Home</div>
+                </a>
+               
+            </div>
+            <div class="row center-block agency">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 columns title">
+                    <a href="#">
+                        <img src="https://tn.gov/etc/clientlibs/tncore/main/img/logos/state-government.png" alt="  State of Tennessee" id="entity-name" data-pin-nopin="true"></a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 columns text-right">
+                    <!-- Begin Search Component -->
+                   
+                    <!-- END Search Component -->
+                </div>
+            </div>
+            <div class="backdrop" style="background-image:url('https://www.tn.gov/content/dam/headers/test.jpg')"></div>
+        </header>
+    </div>
+    <!-- End Header -->
+
+    <!-- Begin TopNav -->
+    <div class="tn-topnav">
+        <nav id="nav">
+            <div class="row center-block">
+                <div class="col-lg-12">
+                    <div class="logo-small tn-logo">
+                        <a href="#"></a>
+                    </div>
+                    
+                    <div class="right primary-print">
+                        <a href="javascript:window.print();" class="icon-print"> </a>
+                    </div>
+                    <div class="right secondary-print">
+                        <a href="javascript:window.print();" class="icon-print"></a>
+                    </div>
+                    <div class="right secondary-search">
+                        <a class="icon-search"> </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- End TopNav -->
+
+    <!-- Begin Basic Template Content -->
+  <div id="main" class="basic">
+<div class="hostinfo">
+	<p><strong>userId</strong> : net/ag0394v</p>
+	<p><strong>ticketNum</strong> : 0</p>
+	<p><strong>transId</strong> : 1</p>
+	<p><strong>hostName</strong> : AG0119WA016702</p>
+	<p><strong>dateSrvImpt</strong> : Fri, 14 Jun 2019 13:42:39 GMT</p>
+	<p><strong>dateUserRan</strong> : Fri, 14 Jun 2019 08:42:27 GMT</p>
+	
+	
+	
+</div>
+<div class="text-center">
+	<div class="bootstrap-table">
+        <div class="fixed-table-toolbar"></div>
+        
+        <div class="fixed-table-container table-no-bordered" style="padding-bottom: 0px;">
+        <div class="fixed-table-header" style="display: none;"><table></table></div>
+        <div class="fixed-table-body">
+        <div class="fixed-table-loading" style="top: 41px;">
+        Loading, please wait...
+        </div>
+        <table data-toggle="table" data-pagination="true" data-search="false" class="table-no-bordered" data-classes="table-no-bordered">
+	  <thead><tr><th style="" data-field="0"><div class="th-inner ">Name</div><div class="fht-cell"></div></th><th style="" data-field="1"><div class="th-inner ">State</div><div class="fht-cell"></div></th><th style="" data-field="2"><div class="th-inner ">Loss</div><div class="fht-cell"></div></th><th style="" data-field="3"><div class="th-inner ">Latency</div><div class="fht-cell"></div></th><th style="" data-field="4"><div class="th-inner ">Message</div><div class="fht-cell"></div></th></tr></thead>
+	  <tbody><tr data-index="0"><td style="">pingGoglDns</td><td style="">OK</td><td style="">0</td><td style="">37</td><td style="">No ping loss to 8.8.8.8 and latency should be acceptable for voice and all other apps.</td></tr><tr data-index="1"><td style="">pingSdcDns</td><td style="">OK</td><td style="">0</td><td style="">31</td><td style="">No ping loss to 10.15.98.64 and latency should be acceptable for voice and all other apps.</td></tr><tr data-index="2"><td style="">pingNdclDns</td><td style="">OK</td><td style="">0</td><td style="">28</td><td style="">No ping loss to 10.23.98.64 and latency should be acceptable for voice and all other apps.</td></tr><tr data-index="3"><td style="">pingTnGov</td><td style="">OK</td><td style="">0</td><td style="">29</td><td style="">No ping loss to 10.15.5.143 and latency should be acceptable for voice and all other apps.</td></tr></tbody>
+	 </table></div>
+        <div class="fixed-table-footer" style="display: none;"><table><tbody><tr></tr></tbody></table></div>
+        </div>
+        <div class="fixed-table-pagination"><div class="pull-left pagination-detail"><span class="pagination-info">Showing 1 to 4 of 4 rows</span><span class="page-list" style="display: none;"><span class="btn-group dropup"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="page-size">10</span> <span class="caret"></span></button><ul class="dropdown-menu" role="menu"><li role="menuitem" class="active"><a href="#">10</a></li></ul></span> rows per page</span></div><div class="pull-right pagination" style="display: none;"><ul class="pagination"><li class="page-item page-pre"><a class="page-link" href="#">‹</a></li><li class="page-item active"><a class="page-link" href="#">1</a></li><li class="page-item page-next"><a class="page-link" href="#">›</a></li></ul></div></div>
+        </div><div class="clearfix"></div>
+
+
+</div>
+<!-- DESIGN NOTE: All of the information (tab names and data) should come from the json, to be dynamic. This is a suggestion of what to do with that data once you get it. -->
+ <div class="tn-tabs">
+<ul class="nav nav-tabs nav-justified responsive-tabs tab-options" role="tablist">
+  <li class="nav-item active">
+    <a class="nav-link " id="ipconfig-tab" data-toggle="tab" href="#ipconfig" role="tab" aria-controls="ipconfig" aria-selected="true">
+ipconfig</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pingGoglDns-tab" data-toggle="tab" href="#pingGoglDns" role="tab" aria-controls="pingGoglDns" aria-selected="false">
+pingGoglDns</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pingNdclDns-tab" data-toggle="tab" href="#pingNdclDns" role="tab" aria-controls="pingNdclDns" aria-selected="false">
+pingNdclDns</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pingSdcDns-tab" data-toggle="tab" href="#pingSdcDns" role="tab" aria-controls="pingSdcDns" aria-selected="false">
+pingSdcDns</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" id="pingTnGov-tab" data-toggle="tab" href="#pingTnGov" role="tab" aria-controls="pingTnGov" aria-selected="false">
+pingTnGov</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" id="procInfo-tab" data-toggle="tab" href="#procInfo" role="tab" aria-controls="procInfo" aria-selected="false">
+procInfo</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" id="statusDict-tab" data-toggle="tab" href="#statusDict" role="tab" aria-controls="statusDict" aria-selected="false">
+statusDict</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" id="traceGoglDns-tab" data-toggle="tab" href="#traceGoglDns" role="tab" aria-controls="traceGoglDns" aria-selected="false">
+traceGoglDns</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" id="traceNdcDns-tab" data-toggle="tab" href="#traceNdcDns" role="tab" aria-controls="traceNdcDns" aria-selected="false">
+traceNdcDns</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" id="traceSdcDns-tab" data-toggle="tab" href="#traceSdcDns" role="tab" aria-controls="traceSdcDns" aria-selected="false">
+traceSdcDns</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" id="traceTnGov-tab" data-toggle="tab" href="#traceTnGov" role="tab" aria-controls="traceTnGov" aria-selected="false">
+traceTnGov</a>
+  </li>
+</ul>
+
+<div class="tab-content top">
+  <div class="tab-pane active" id="ipconfig" role="tabpanel" aria-labelledby="ipconfig-tab">
+ <h4>Windows IP Configuration</h4>
+	<table class="table-no-bordered">
+		<tr>
+		<td>DNS Suffix Search List</td>
+		<td>net.ads.state.tn.us</td>
+		</tr>
+		<tr>
+		<td>Host Name</td>
+		<td>AG0119WA016702</td>
+		</tr>
+		<tr>
+		<td>IP Routing Enabled</td>
+		<td>No</td>
+		</tr>
+		<tr>
+		<td>Node Type</td>
+		<td>Hybrid</td>
+		</tr>
+		<tr>
+		<td>Primary Dns Suffix</td>
+		<td>net.ads.state.tn.us</td>
+		</tr>
+		<tr>
+		<td>WINS Proxy Enabled</td>
+		<td>No</td>
+		</tr>
+		
+	</table>
+	 <h4>Ethernet adapter Local Area Connection* 12</h4>
+	 <table class="table-no-bordered">
+		<tr>
+		<td>DNS Suffix Search List</td>
+		<td>net.ads.state.tn.us</td>
+		</tr>
+		<tr>
+		<td>Host Name</td>
+		<td>AG0119WA016702</td>
+		</tr>
+		<tr>
+		<td>IP Routing Enabled</td>
+		<td>No</td>
+		</tr>
+		<tr>
+		<td>Node Type</td>
+		<td>Hybrid</td>
+		</tr>
+		<tr>
+		<td>Primary Dns Suffix</td>
+		<td>net.ads.state.tn.us</td>
+		</tr>
+		<tr>
+		<td>WINS Proxy Enabled</td>
+		<td>No</td>
+		</tr>
+	</table>
+	<h4>Ethernet adapter Ethernet</h4>
+	 <table class="table-no-bordered">
+		<tr>
+		<td>DNS Suffix Search List</td>
+		<td>net.ads.state.tn.us</td>
+		</tr>
+		<tr>
+		<td>Host Name</td>
+		<td>AG0119WA016702</td>
+		</tr>
+		<tr>
+		<td>IP Routing Enabled</td>
+		<td>No</td>
+		</tr>
+		<tr>
+		<td>Node Type</td>
+		<td>Hybrid</td>
+		</tr>
+		<tr>
+		<td>Primary Dns Suffix</td>
+		<td>net.ads.state.tn.us</td>
+		</tr>
+		<tr>
+		<td>WINS Proxy Enabled</td>
+		<td>No</td>
+		</tr>
+	</table>
+<h4>Ethernet adapter Npcap Loopback Adapter</h4>
+	 <table class="table-no-bordered">
+		<tr>
+		<td>DNS Suffix Search List</td>
+		<td>net.ads.state.tn.us</td>
+		</tr>
+		<tr>
+		<td>Host Name</td>
+		<td>AG0119WA016702</td>
+		</tr>
+		<tr>
+		<td>IP Routing Enabled</td>
+		<td>No</td>
+		</tr>
+		<tr>
+		<td>Node Type</td>
+		<td>Hybrid</td>
+		</tr>
+		<tr>
+		<td>Primary Dns Suffix</td>
+		<td>net.ads.state.tn.us</td>
+		</tr>
+		<tr>
+		<td>WINS Proxy Enabled</td>
+		<td>No</td>
+		</tr>
+	</table>
+		
+  </div>
+  <div class="tab-pane" id="pingGoglDns" role="tabpanel" aria-labelledby="pingGoglDns-tab">
+	 <table class="table-no-bordered">
+		<tr>
+		<td>ipAddr</td>
+		<td>8.8.8.8</td>
+		</tr>
+		<tr>
+		<td>latencyAvg</td>
+		<td>37</td>
+		</tr>
+		<tr>
+		<td>latencyMax</td>
+		<td>39</td>
+		</tr>
+		<tr>
+		<td>latencyMin</td>
+		<td>37</td>
+		</tr>
+		<tr>
+		<td>pingLossPrct</td>
+		<td>0</td>
+		</tr>
+	</table>
+  </div>
+  <div class="tab-pane" id="pingNdclDns" role="tabpanel" aria-labelledby="pingNdclDns-tab">
+	<table class="table-no-bordered">
+		<tr>
+		<td>ipAddr</td>
+		<td>10.23.98.64</td>
+		</tr>
+		<tr>
+		<td>latencyAvg</td>
+		<td>28</td>
+		</tr>
+		<tr>
+		<td>latencyMax</td>
+		<td>29</td>
+		</tr>
+		<tr>
+		<td>latencyMin</td>
+		<td>27</td>
+		</tr>
+		<tr>
+		<td>pingLossPrct</td>
+		<td>0</td>
+		</tr>
+	</table>
+  </div>
+  <div class="tab-pane" id="pingSdcDns" role="tabpanel" aria-labelledby="pingSdcDns-tab">
+	<table class="table-no-bordered">
+		<tr>
+		<td>ipAddr</td>
+		<td>10.15.98.64</td>
+		</tr>
+		<tr>
+		<td>latencyAvg</td>
+		<td>31</td>
+		</tr>
+		<tr>
+		<td>latencyMax</td>
+		<td>38</td>
+		</tr>
+		<tr>
+		<td>latencyMin</td>
+		<td>28</td>
+		</tr>
+		<tr>
+		<td>pingLossPrct</td>
+		<td>0</td>
+		</tr>
+	</table>
+  </div>
+  <div class="tab-pane" id="pingTnGov" role="tabpanel" aria-labelledby="pingTnGov-tab">
+	<table class="table-no-bordered">
+		<tr>
+		<td>ipAddr</td>
+		<td>10.15.5.143</td>
+		</tr>
+		<tr>
+		<td>latencyAvg</td>
+		<td>29</td>
+		</tr>
+		<tr>
+		<td>latencyMax</td>
+		<td>30</td>
+		</tr>
+		<tr>
+		<td>latencyMin</td>
+		<td>29</td>
+		</tr>
+		<tr>
+		<td>pingLossPrct</td>
+		<td>0</td>
+		</tr>
+	</table>
+  </div>
+  <div class="tab-pane" id="procInfo" role="tabpanel" aria-labelledby="procInfo-tab">
+	<table class="table-no-bordered">
+		<tr>
+		<td>memory</td>
+		<td>110356</td>
+		</tr>
+		<tr>
+		<td>proc</td>
+		<td>dwm.exe</td>
+		</tr>
+		<tr>
+		<td>procId</td>
+		<td>1356</td>
+		</tr>
+		<tr>
+		<td>session</td>
+		<td>Console</td>
+		</tr>
+		<tr>
+		<td>memory</td>
+		<td>45024</td>
+		</tr>
+		<tr>
+		<td>proc</td>
+		<td>svchost.exe</td>
+		</tr>
+		<tr>
+		<td>procId</td>
+		<td>2248</td>
+		</tr>
+		<tr>
+		<td>session</td>
+		<td>Services</td>
+		</tr>
+		<tr>
+		<td>memory</td>
+		<td>125708</td>
+		</tr>
+		<tr>
+		<td>proc</td>
+		<td>svchost.exe</td>
+		</tr>
+		<tr>
+		<td>procId</td>
+		<td>2768</td>
+		</tr>
+		<tr>
+		<td>session</td>
+		<td>Services</td>
+		</tr>
+		<tr>
+		<td>memory</td>
+		<td>0</td>
+		</tr>
+		<tr>
+		<td>proc</td>
+		<td>Memory Compression</td>
+		</tr>
+		<tr>
+		<td>procId</td>
+		<td>3164</td>
+		</tr>
+		<tr>
+		<td>session</td>
+		<td>3164</td>
+		</tr>
+		<tr>
+		<td>memory</td>
+		<td>47100</td>
+		</tr>
+		<tr>
+		<td>proc</td>
+		<td>svchost.exe</td>
+		</tr>
+		<tr>
+		<td>procId</td>
+		<td>4940</td>
+		</tr>
+		<tr>
+		<td>session</td>
+		<td>Services</td>
+		</tr>
+		<tr>
+		<td>memory</td>
+		<td>84636</td>
+		</tr>
+		<tr>
+		<td>proc</td>
+		<td>mongod.exe</td>
+		</tr>
+		<tr>
+		<td>procId</td>
+		<td>5708</td>
+		</tr>
+		<tr>
+		<td>session</td>
+		<td>Services</td>
+		</tr>
+		<tr>
+		<td>memory</td>
+		<td>61352</td>
+		</tr>
+		<tr>
+		<td>proc</td>
+		<td>SearchIndexer.exe</td>
+		</tr>
+		<tr>
+		<td>procId</td>
+		<td>4328</td>
+		</tr>
+		<tr>
+		<td>session</td>
+		<td>Services</td>
+		</tr>
+		<tr>
+		<td>memory</td>
+		<td>61352</td>
+		</tr>
+		<tr>
+		<td>proc</td>
+		<td>SearchIndexer.exe</td>
+		</tr>
+		<tr>
+		<td>procId</td>
+		<td>4328</td>
+		</tr>
+		<tr>
+		<td>session</td>
+		<td>Services</td>
+		</tr>
+		<tr>
+		<td>memory</td>
+		<td>61352</td>
+		</tr>
+		<tr>
+		<td>proc</td>
+		<td>SearchIndexer.exe</td>
+		</tr>
+		<tr>
+		<td>procId</td>
+		<td>4328</td>
+		</tr>
+		<tr>
+		<td>session</td>
+		<td>Services</td>
+		</tr>
+		<tr>
+		<td>memory</td>
+		<td>61352</td>
+		</tr>
+		<tr>
+		<td>proc</td>
+		<td>SearchIndexer.exe</td>
+		</tr>
+		<tr>
+		<td>procId</td>
+		<td>4328</td>
+		</tr>
+		<tr>
+		<td>session</td>
+		<td>Services</td>
+		</tr>
+		<tr>
+		<td>memory</td>
+		<td>61352</td>
+		</tr>
+		<tr>
+		<td>proc</td>
+		<td>SearchIndexer.exe</td>
+		</tr>
+		<tr>
+		<td>procId</td>
+		<td>4328</td>
+		</tr>
+		<tr>
+		<td>session</td>
+		<td>Services</td>
+		</tr>
+		<tr>
+		<td>memory</td>
+		<td>61352</td>
+		</tr>
+		<tr>
+		<td>proc</td>
+		<td>SearchIndexer.exe</td>
+		</tr>
+		<tr>
+		<td>procId</td>
+		<td>4328</td>
+		</tr>
+		<tr>
+		<td>session</td>
+		<td>Services</td>
+		</tr>
+		<tr>
+		<td>memory</td>
+		<td>61352</td>
+		</tr>
+		<tr>
+		<td>proc</td>
+		<td>SearchIndexer.exe</td>
+		</tr>
+		<tr>
+		<td>procId</td>
+		<td>4328</td>
+		</tr>
+		<tr>
+		<td>session</td>
+		<td>Services</td>
+		</tr>
+	</table>
+  </div>
+  <div class="tab-pane" id="statusDict" role="tabpanel" aria-labelledby="statusDict-tab">
+	<h4>pingGoglDns</h4>
+	<table class="table-no-bordered">
+		<tr>
+		<td>Average Latency</td>
+		<td>37</td>
+		</tr>
+		<tr>
+		<td>Message</td>
+		<td>No ping loss to 8.8.8.8 and latency should be acceptable for voice and all other apps.</td>
+		</tr>
+		<tr>
+		<td>Ping Los</td>
+		<td>0</td>
+		</tr>
+		<tr>
+		<td>State</td>
+		<td>OK</td>
+		</tr>
+	</table>
+	<h4>pingNdclDns</h4>
+	<table class="table-no-bordered">
+		<tr>
+		<td>Average Latency</td>
+		<td>28</td>
+		</tr>
+		<tr>
+		<td>Message</td>
+		<td>No ping loss to 10.23.98.64 and latency should be acceptable for voice and all other apps.</td>
+		</tr>
+		<tr>
+		<td>Ping Los</td>
+		<td>0</td>
+		</tr>
+		<tr>
+		<td>State</td>
+		<td>OK</td>
+		</tr>
+	</table>
+	<h4>pingSdcDns</h4>
+	<table class="table-no-bordered">
+		<tr>
+		<td>Average Latency</td>
+		<td>31</td>
+		</tr>
+		<tr>
+		<td>Message</td>
+		<td>No ping loss to 10.15.98.64 and latency should be acceptable for voice and all other apps.</td>
+		</tr>
+		<tr>
+		<td>Ping Los</td>
+		<td>0</td>
+		</tr>
+		<tr>
+		<td>State</td>
+		<td>OK</td>
+		</tr>
+	</table>
+	<h4>pingTnGov</h4>
+	<table class="table-no-bordered">
+		<tr>
+		<td>Average Latency</td>
+		<td>29</td>
+		</tr>
+		<tr>
+		<td>Message</td>
+		<td>No ping loss to 10.15.5.143 and latency should be acceptable for voice and all other apps.</td>
+		</tr>
+		<tr>
+		<td>Ping Los</td>
+		<td>0</td>
+		</tr>
+		<tr>
+		<td>State</td>
+		<td>OK</td>
+		</tr>
+	</table>
+	
+  </div>
+  
+  <div class="tab-pane" id="traceGoglDns" role="tabpanel" aria-labelledby="traceGoglDns-tab">
+	<p>ipAddr : 8.8.8.9</p>
+	<h4>traceList</h4>
+	<table class="table-no-bordered">
+		<tr>
+		<td>ipAddrHop</td>
+		<td>10.201.200.200</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>1</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>29</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>28</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>*</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>10.170.44.81</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>2</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>28</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>26</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>26</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.30.1.33</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>3</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>47</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>29</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>28</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.30.1.22</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>4</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>32</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>30</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>28</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.30.16.9</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>5</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>*</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>399</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>28</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>10.23.98.64</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>6</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>38</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>28</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>30</td>
+		</tr>
+	</table>
+  </div>
+  
+  <div class="tab-pane" id="traceNdcDns" role="tabpanel" aria-labelledby="traceNdcDns-tab">
+	<p>ipAddr : 10.15.98.64</p>
+	<h4>traceList</h4>
+	<table class="table-no-bordered">
+		<tr>
+		<td>ipAddrHop</td>
+		<td>10.201.200.200</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>1</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>27</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>*</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>39</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>10.170.44.81</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>2</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>95</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>32</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>28</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.30.1.17</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>3</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>35</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>28</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>28</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.30.1.14</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>4</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>30</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>30</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>27</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.29.1.6</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>5</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>32</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>43</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>29</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.29.16.9</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>6</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>*</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>223</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>35</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>10.15.98.64</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>7</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>33</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>32</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>37</td>
+		</tr>
+	</table>
+  </div>
+  <div class="tab-pane" id="traceSdcDns" role="tabpanel" aria-labelledby="traceSdcDns-tab">
+	<p>ipAddr : 10.15.98.64</p>
+	<h4>traceList</h4>
+	<table class="table-no-bordered">
+		<tr>
+		<td>ipAddrHop</td>
+		<td>10.201.200.200</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>1</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>27</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>*</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>39</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>10.170.44.81</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>2</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>95</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>32</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>28</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.30.1.17</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>3</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>35</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>28</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>28</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.30.1.14</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>4</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>30</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>30</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>27</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.29.1.6</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>5</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>32</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>43</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>29</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.29.16.9</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>6</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>*</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>223</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>35</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>10.15.98.64</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>7</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>33</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>32</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>37</td>
+		</tr>
+	</table>
+  </div>
+  <div class="tab-pane" id="traceTnGov" role="tabpanel" aria-labelledby="traceTnGov-tab">
+	<p>ipAddr : 10.15.5.143</p>
+	<h4>traceList</h4>
+	<table class="table-no-bordered">
+		<tr>
+		<td>ipAddrHop</td>
+		<td>10.201.200.200</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>1</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>27</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>*</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>39</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>10.170.44.81</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>2</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>95</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>32</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>28</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.30.1.17</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>3</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>35</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>28</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>28</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.30.1.14</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>4</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>30</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>30</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>27</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.29.1.6</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>5</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>32</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>43</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>29</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>172.29.16.9</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>6</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>*</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>223</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>35</td>
+		</tr>
+		
+		<tr>
+		<td>ipAddrHop</td>
+		<td>10.15.98.64</td>
+		</tr>
+		<tr>
+		<td>tracOrdrNum</td>
+		<td>7</td>
+		</tr>
+		<tr>
+		<td>trip1time</td>
+		<td>33</td>
+		</tr>
+		<tr>
+		<td>trip2time</td>
+		<td>32</td>
+		</tr>
+		<tr>
+		<td>trip3time</td>
+		<td>37</td>
+		</tr>
+	</table>
+  </div>
+</div>
+</div>
+<script>
+  $(function () {
+    $('#myTab li:last-child a').tab('show')
+  })
+</script>
+
+<div style="margin-left: 20px;margin-right: 20px; display:none;">
+	<div id="jsonReturn">
+
+		
+
+			<pre id="json-renderer"><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"dateSrvImpt"</span>: <span class="json-string">"Fri, 14 Jun 2019 13:42:39 GMT"</span>,</li><li><span class="json-string">"dateUserRan"</span>: <span class="json-string">"Fri, 14 Jun 2019 08:42:27 GMT"</span>,</li><li><span class="json-string">"hostName"</span>: <span class="json-string">"AG0119WA016702"</span>,</li><li><a href="" class="json-toggle"><span class="json-string">"ipconfig"</span></a>: [<ol class="json-array"><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><a href="" class="json-toggle"><span class="json-string">"Windows IP Configuration"</span></a>: {<ul class="json-dict"><li><span class="json-string">"DNS Suffix Search List"</span>: <span class="json-string">"net.ads.state.tn.us"</span>,</li><li><span class="json-string">"Host Name"</span>: <span class="json-string">"AG0119WA016702"</span>,</li><li><span class="json-string">"IP Routing Enabled"</span>: <span class="json-string">"No"</span>,</li><li><span class="json-string">"Node Type"</span>: <span class="json-string">"Hybrid"</span>,</li><li><span class="json-string">"Primary Dns Suffix"</span>: <span class="json-string">"net.ads.state.tn.us"</span>,</li><li><span class="json-string">"WINS Proxy Enabled"</span>: <span class="json-string">"No"</span></li></ul>}</li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><a href="" class="json-toggle"><span class="json-string">"Ethernet adapter Local Area Connection* 12:"</span></a>: {<ul class="json-dict"><li><span class="json-string">"Autoconfiguration Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Connection-specific DNS Suffix"</span>: <span class="json-string">"net.ads.state.tn.us"</span>,</li><li><span class="json-string">"DHCP Enabled"</span>: <span class="json-string">"No"</span>,</li><li><a href="" class="json-toggle"><span class="json-string">"DNS Servers"</span></a>: [<ol class="json-array"><li><span class="json-string">"10.23.98.64"</span>,</li><li><span class="json-string">"10.15.98.64"</span></li></ol>],</li><li><span class="json-string">"Default Gateway"</span>: <span class="json-string">"0.0.0.0"</span>,</li><li><span class="json-string">"Description"</span>: <span class="json-string">"Juniper Networks Virtual Adapter"</span>,</li><li><span class="json-string">"IPv4 Address"</span>: <span class="json-string">"10.201.1.4(Preferred) "</span>,</li><li><span class="json-string">"NetBIOS over Tcpip"</span>: <span class="json-string">"Enabled"</span>,</li><li><span class="json-string">"Physical Address"</span>: <span class="json-string">"02-05-85-7F-EB-80"</span>,</li><li><span class="json-string">"Subnet Mask"</span>: <span class="json-string">"255.255.255.255"</span></li></ul>}</li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><a href="" class="json-toggle"><span class="json-string">"Ethernet adapter Ethernet:"</span></a>: {<ul class="json-dict"><li><span class="json-string">"Autoconfiguration Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Connection-specific DNS Suffix"</span>: <span class="json-string">"nash.tenn"</span>,</li><li><span class="json-string">"DHCP Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Description"</span>: <span class="json-string">"Intel(R) Ethernet Connection (2) I219-LM"</span>,</li><li><span class="json-string">"Media State"</span>: <span class="json-string">"Media disconnected"</span>,</li><li><span class="json-string">"Physical Address"</span>: <span class="json-string">"F4-30-B9-CB-8D-37"</span></li></ul>}</li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><a href="" class="json-toggle"><span class="json-string">"Ethernet adapter Npcap Loopback Adapter:"</span></a>: {<ul class="json-dict"><li><span class="json-string">"Autoconfiguration Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Autoconfiguration IPv4 Address"</span>: <span class="json-string">"169.254.242.147(Preferred) "</span>,</li><li><span class="json-string">"Connection-specific DNS Suffix"</span>: <span class="json-string">""</span>,</li><li><span class="json-string">"DHCP Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Default Gateway"</span>: <span class="json-string">""</span>,</li><li><span class="json-string">"Description"</span>: <span class="json-string">"Npcap Loopback Adapter"</span>,</li><li><span class="json-string">"NetBIOS over Tcpip"</span>: <span class="json-string">"Enabled"</span>,</li><li><span class="json-string">"Physical Address"</span>: <span class="json-string">"02-00-4C-4F-4F-50"</span>,</li><li><span class="json-string">"Subnet Mask"</span>: <span class="json-string">"255.255.0.0"</span></li></ul>}</li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><a href="" class="json-toggle"><span class="json-string">"Ethernet adapter Ethernet 2:"</span></a>: {<ul class="json-dict"><li><span class="json-string">"Autoconfiguration Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Autoconfiguration IPv4 Address"</span>: <span class="json-string">"169.254.218.162(Preferred) "</span>,</li><li><span class="json-string">"Connection-specific DNS Suffix"</span>: <span class="json-string">""</span>,</li><li><span class="json-string">"DHCP Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Default Gateway"</span>: <span class="json-string">""</span>,</li><li><span class="json-string">"Description"</span>: <span class="json-string">"Npcap Loopback Adapter"</span>,</li><li><span class="json-string">"NetBIOS over Tcpip"</span>: <span class="json-string">"Enabled"</span>,</li><li><span class="json-string">"Physical Address"</span>: <span class="json-string">"02-00-4C-4F-4F-50"</span>,</li><li><span class="json-string">"Subnet Mask"</span>: <span class="json-string">"255.255.0.0"</span></li></ul>}</li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><a href="" class="json-toggle"><span class="json-string">"Wireless LAN adapter Local Area Connection* 1:"</span></a>: {<ul class="json-dict"><li><span class="json-string">"Autoconfiguration Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Connection-specific DNS Suffix"</span>: <span class="json-string">""</span>,</li><li><span class="json-string">"DHCP Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Description"</span>: <span class="json-string">"Microsoft Wi-Fi Direct Virtual Adapter"</span>,</li><li><span class="json-string">"Media State"</span>: <span class="json-string">"Media disconnected"</span>,</li><li><span class="json-string">"Physical Address"</span>: <span class="json-string">"34-F6-4B-8A-81-36"</span></li></ul>}</li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><a href="" class="json-toggle"><span class="json-string">"Wireless LAN adapter Local Area Connection* 2:"</span></a>: {<ul class="json-dict"><li><span class="json-string">"Autoconfiguration Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Connection-specific DNS Suffix"</span>: <span class="json-string">""</span>,</li><li><span class="json-string">"DHCP Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Description"</span>: <span class="json-string">"Microsoft Wi-Fi Direct Virtual Adapter #2"</span>,</li><li><span class="json-string">"Media State"</span>: <span class="json-string">"Media disconnected"</span>,</li><li><span class="json-string">"Physical Address"</span>: <span class="json-string">"36-F6-4B-8A-81-35"</span></li></ul>}</li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><a href="" class="json-toggle"><span class="json-string">"Wireless LAN adapter Wi-Fi:"</span></a>: {<ul class="json-dict"><li><span class="json-string">"Autoconfiguration Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Connection-specific DNS Suffix"</span>: <span class="json-string">""</span>,</li><li><span class="json-string">"DHCP Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"DHCP Server"</span>: <span class="json-string">"10.100.0.1"</span>,</li><li><a href="" class="json-toggle"><span class="json-string">"DNS Servers"</span></a>: [<ol class="json-array"><li><span class="json-string">"8.8.8.8"</span>,</li><li><span class="json-string">""</span></li></ol>],</li><li><span class="json-string">"Default Gateway"</span>: <span class="json-string">"10.100.0.1"</span>,</li><li><span class="json-string">"Description"</span>: <span class="json-string">"Intel(R) Dual Band Wireless-AC 7265"</span>,</li><li><span class="json-string">"IPv4 Address"</span>: <span class="json-string">"10.100.0.125(Preferred) "</span>,</li><li><span class="json-string">"Lease Expires"</span>: <span class="json-string">"Friday, June 14, 2019 12:32:40 PM"</span>,</li><li><span class="json-string">"Lease Obtained"</span>: <span class="json-string">"Friday, June 14, 2019 6:32:39 AM"</span>,</li><li><span class="json-string">"NetBIOS over Tcpip"</span>: <span class="json-string">"Enabled"</span>,</li><li><span class="json-string">"Physical Address"</span>: <span class="json-string">"34-F6-4B-8A-81-35"</span>,</li><li><span class="json-string">"Subnet Mask"</span>: <span class="json-string">"255.255.255.0"</span></li></ul>}</li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><a href="" class="json-toggle"><span class="json-string">"Ethernet adapter Bluetooth Network Connection:"</span></a>: {<ul class="json-dict"><li><span class="json-string">"Autoconfiguration Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Connection-specific DNS Suffix"</span>: <span class="json-string">""</span>,</li><li><span class="json-string">"DHCP Enabled"</span>: <span class="json-string">"Yes"</span>,</li><li><span class="json-string">"Description"</span>: <span class="json-string">"Bluetooth Device (Personal Area Network)"</span>,</li><li><span class="json-string">"Media State"</span>: <span class="json-string">"Media disconnected"</span>,</li><li><span class="json-string">"Physical Address"</span>: <span class="json-string">"34-F6-4B-8A-81-39"</span></li></ul>}</li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><a href="" class="json-toggle"><span class="json-string">"Mobile Broadband adapter Cellular:"</span></a>: {<ul class="json-dict"><li><span class="json-string">"Connection-specific DNS Suffix"</span>: <span class="json-string">""</span>,</li><li><span class="json-string">"DHCP Enabled"</span>: <span class="json-string">"No"</span>,</li><li><span class="json-string">"Description"</span>: <span class="json-string">"HP lt4120 Snapdragon X5 LTE"</span>,</li><li><span class="json-string">"Media State"</span>: <span class="json-string">"Media disconnected"</span>,</li><li><span class="json-string">"Physical Address"</span>: <span class="json-string">"9C-B9-86-58-5F-44"</span></li></ul>}</li></ul>}</li></ol>],</li><li><a href="" class="json-toggle"><span class="json-string">"pingGoglDns"</span></a>: {<ul class="json-dict"><li><span class="json-string">"ipAddr"</span>: <span class="json-string">"8.8.8.8"</span>,</li><li><span class="json-string">"latencyAvg"</span>: <span class="json-string">"37"</span>,</li><li><span class="json-string">"latencyMax"</span>: <span class="json-string">"39"</span>,</li><li><span class="json-string">"latencyMin"</span>: <span class="json-string">"37"</span>,</li><li><span class="json-string">"pingLossPrct"</span>: <span class="json-string">"0"</span></li></ul>},</li><li><a href="" class="json-toggle"><span class="json-string">"pingNdclDns"</span></a>: {<ul class="json-dict"><li><span class="json-string">"ipAddr"</span>: <span class="json-string">"10.23.98.64"</span>,</li><li><span class="json-string">"latencyAvg"</span>: <span class="json-string">"28"</span>,</li><li><span class="json-string">"latencyMax"</span>: <span class="json-string">"29"</span>,</li><li><span class="json-string">"latencyMin"</span>: <span class="json-string">"27"</span>,</li><li><span class="json-string">"pingLossPrct"</span>: <span class="json-string">"0"</span></li></ul>},</li><li><a href="" class="json-toggle"><span class="json-string">"pingSdcDns"</span></a>: {<ul class="json-dict"><li><span class="json-string">"ipAddr"</span>: <span class="json-string">"10.15.98.64"</span>,</li><li><span class="json-string">"latencyAvg"</span>: <span class="json-string">"31"</span>,</li><li><span class="json-string">"latencyMax"</span>: <span class="json-string">"38"</span>,</li><li><span class="json-string">"latencyMin"</span>: <span class="json-string">"28"</span>,</li><li><span class="json-string">"pingLossPrct"</span>: <span class="json-string">"0"</span></li></ul>},</li><li><a href="" class="json-toggle"><span class="json-string">"pingTnGov"</span></a>: {<ul class="json-dict"><li><span class="json-string">"ipAddr"</span>: <span class="json-string">"10.15.5.143"</span>,</li><li><span class="json-string">"latencyAvg"</span>: <span class="json-string">"29"</span>,</li><li><span class="json-string">"latencyMax"</span>: <span class="json-string">"30"</span>,</li><li><span class="json-string">"latencyMin"</span>: <span class="json-string">"29"</span>,</li><li><span class="json-string">"pingLossPrct"</span>: <span class="json-string">"0"</span></li></ul>},</li><li><a href="" class="json-toggle"><span class="json-string">"procInfo"</span></a>: [<ol class="json-array"><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">110356</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"dwm.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"1356"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">45024</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"svchost.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"2248"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Services"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">125708</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"svchost.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"2768"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Services"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">0</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"Memory Compression"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"3164"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"3164"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">47100</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"svchost.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"4940"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Services"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">84636</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"mongod.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"5708"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Services"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">61352</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"CcmExec.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"7996"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Services"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">54060</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"SearchIndexer.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"4328"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Services"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">49524</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"ccSvcHst.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"7328"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Services"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">68884</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"PulseSecureService.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"1704"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Services"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">97944</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"SmartAudio3.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"8748"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">65576</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"ctfmon.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"8760"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">177164</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"explorer.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"9100"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">109644</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"ShellExperienceHost.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"8548"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">201444</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"SearchUI.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"9224"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">59700</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"RuntimeBroker.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"9336"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">170920</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"CiscoJabber.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"10184"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">59692</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"RPCSuite.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"11092"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">41296</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"SCNotification.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"11208"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">59032</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"Taskmgr.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"6732"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">507924</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"firefox.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"6956"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">89704</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"firefox.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"12012"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">165968</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"firefox.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"10956"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">113852</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"firefox.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"7008"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">45692</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"WindowsInternal.Composabl"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"10980"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">49684</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"LockApp.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"14260"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">285068</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"firefox.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"9796"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">148760</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"OUTLOOK.EXE"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"13000"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">69272</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"powershell.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"13528"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">71292</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"powershell.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"16736"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">70392</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"powershell.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"17840"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">88100</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"robo3t.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"9760"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">1</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"notepad"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">".exe"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"3404"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">798836</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"eclipse.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"18356"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">174804</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"firefox.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"8072"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">82952</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"mongod.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"2536"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">157948</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"firefox.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"19228"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">172628</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"firefox.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"16012"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">183060</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"firefox.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"14500"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">211916</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"firefox.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"18684"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">53988</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"WINWORD.EXE"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"18300"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">207564</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"firefox.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"16132"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Console"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"memory"</span>: <span class="json-literal">51280</span>,</li><li><span class="json-string">"proc"</span>: <span class="json-string">"TaniumClient.exe"</span>,</li><li><span class="json-string">"procId"</span>: <span class="json-string">"7716"</span>,</li><li><span class="json-string">"session"</span>: <span class="json-string">"Services"</span></li></ul>}</li></ol>],</li><li><a href="" class="json-toggle"><span class="json-string">"statusDict"</span></a>: {<ul class="json-dict"><li><a href="" class="json-toggle"><span class="json-string">"pingGoglDns"</span></a>: {<ul class="json-dict"><li><span class="json-string">"Average Latency"</span>: <span class="json-literal">37</span>,</li><li><span class="json-string">"Message"</span>: <span class="json-string">"No ping loss to 8.8.8.8 and latency should be acceptable for voice and all other apps."</span>,</li><li><span class="json-string">"Ping Loss"</span>: <span class="json-literal">0</span>,</li><li><span class="json-string">"State"</span>: <span class="json-string">"OK"</span></li></ul>},</li><li><a href="" class="json-toggle"><span class="json-string">"pingNdclDns"</span></a>: {<ul class="json-dict"><li><span class="json-string">"Average Latency"</span>: <span class="json-literal">28</span>,</li><li><span class="json-string">"Message"</span>: <span class="json-string">"No ping loss to 10.23.98.64 and latency should be acceptable for voice and all other apps."</span>,</li><li><span class="json-string">"Ping Loss"</span>: <span class="json-literal">0</span>,</li><li><span class="json-string">"State"</span>: <span class="json-string">"OK"</span></li></ul>},</li><li><a href="" class="json-toggle"><span class="json-string">"pingSdcDns"</span></a>: {<ul class="json-dict"><li><span class="json-string">"Average Latency"</span>: <span class="json-literal">31</span>,</li><li><span class="json-string">"Message"</span>: <span class="json-string">"No ping loss to 10.15.98.64 and latency should be acceptable for voice and all other apps."</span>,</li><li><span class="json-string">"Ping Loss"</span>: <span class="json-literal">0</span>,</li><li><span class="json-string">"State"</span>: <span class="json-string">"OK"</span></li></ul>},</li><li><a href="" class="json-toggle"><span class="json-string">"pingTnGov"</span></a>: {<ul class="json-dict"><li><span class="json-string">"Average Latency"</span>: <span class="json-literal">29</span>,</li><li><span class="json-string">"Message"</span>: <span class="json-string">"No ping loss to 10.15.5.143 and latency should be acceptable for voice and all other apps."</span>,</li><li><span class="json-string">"Ping Loss"</span>: <span class="json-literal">0</span>,</li><li><span class="json-string">"State"</span>: <span class="json-string">"OK"</span></li></ul>}</li></ul>},</li><li><span class="json-string">"ticketNum"</span>: <span class="json-literal">0</span>,</li><li><a href="" class="json-toggle"><span class="json-string">"traceGoglDns"</span></a>: {<ul class="json-dict"><li><span class="json-string">"ipAddr"</span>: <span class="json-string">"8.8.8.9"</span>,</li><li><a href="" class="json-toggle"><span class="json-string">"traceList"</span></a>: [<ol class="json-array"><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"10.201.200.200"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"1"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"27"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"31"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"*"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"10.170.44.81"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"2"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"37"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"28"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"28"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"10.122.253.17"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"3"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"38"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"32"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"28"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"12.118.97.17"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"4"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"32"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"30"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"31"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"12.122.148.194"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"5"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"35"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"35"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"35"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"12.122.2.5"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"6"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"49"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"39"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"40"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"12.122.96.85"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"7"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"38"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"36"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"33"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"12.255.10.2"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"8"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"*"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"35"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"36"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"."</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"9"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"*"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"*"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"*"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"216.239.43.24"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"10"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"37"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"39"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"35"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"108.170.249.44"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"11"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"38"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"80"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"37"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"108.170.236.236"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"12"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"36"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"35"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"36"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"72.14.239.17"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"13"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"55"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"35"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"40"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"216.239.47.119"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"14"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"37"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"37"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"37"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"."</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"15"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"*"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"*"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"*"</span></li></ul>}</li></ol>]</li></ul>},</li><li><a href="" class="json-toggle"><span class="json-string">"traceNdcDns"</span></a>: {<ul class="json-dict"><li><span class="json-string">"ipAddr"</span>: <span class="json-string">"10.23.98.64"</span>,</li><li><a href="" class="json-toggle"><span class="json-string">"traceList"</span></a>: [<ol class="json-array"><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"10.201.200.200"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"1"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"29"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"28"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"*"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"10.170.44.81"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"2"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"28"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"26"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"26"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"172.30.1.33"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"3"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"47"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"29"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"28"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"172.30.1.22"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"4"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"32"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"30"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"28"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"172.30.16.9"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"5"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"*"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"399"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"28"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"10.23.98.64"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"6"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"38"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"28"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"30"</span></li></ul>}</li></ol>]</li></ul>},</li><li><a href="" class="json-toggle"><span class="json-string">"traceSdcDns"</span></a>: {<ul class="json-dict"><li><span class="json-string">"ipAddr"</span>: <span class="json-string">"10.15.98.64"</span>,</li><li><a href="" class="json-toggle"><span class="json-string">"traceList"</span></a>: [<ol class="json-array"><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"10.201.200.200"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"1"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"27"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"*"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"39"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"10.170.44.81"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"2"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"95"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"32"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"28"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"172.30.1.17"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"3"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"35"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"28"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"28"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"172.30.1.14"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"4"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"30"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"30"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"27"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"172.29.1.6"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"5"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"32"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"43"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"29"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"172.29.16.9"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"6"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"*"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"223"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"35"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"10.15.98.64"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"7"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"33"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"32"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"37"</span></li></ul>}</li></ol>]</li></ul>},</li><li><a href="" class="json-toggle"><span class="json-string">"traceTnGov"</span></a>: {<ul class="json-dict"><li><span class="json-string">"ipAddr"</span>: <span class="json-string">"10.15.5.143"</span>,</li><li><a href="" class="json-toggle"><span class="json-string">"traceList"</span></a>: [<ol class="json-array"><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"10.201.200.200"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"1"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"33"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"*"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"30"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"10.170.44.81"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"2"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"92"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"32"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"28"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"172.30.1.17"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"3"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"32"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"28"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"28"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"172.30.1.14"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"4"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"29"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"29"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"28"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"172.29.1.6"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"5"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"41"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"40"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"32"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"172.29.16.9"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"6"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"*"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"222"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"32"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"10.15.5.143"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"7"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"29"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"37"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"*"</span></li></ul>},</li><li><a href="" class="json-toggle"></a>{<ul class="json-dict"><li><span class="json-string">"ipAddrHop"</span>: <span class="json-string">"10.15.5.143"</span>,</li><li><span class="json-string">"tracOrdrNum"</span>: <span class="json-string">"8"</span>,</li><li><span class="json-string">"trip1time"</span>: <span class="json-string">"31"</span>,</li><li><span class="json-string">"trip2time"</span>: <span class="json-string">"29"</span>,</li><li><span class="json-string">"trip3time"</span>: <span class="json-string">"30"</span></li></ul>}</li></ol>]</li></ul>},</li><li><span class="json-string">"transId"</span>: <span class="json-literal">1</span>,</li><li><span class="json-string">"userId"</span>: <span class="json-string">"net/ag0394v"</span></li></ul>}</pre>
+
+		
+
+		<br>
+
+	</div>
+</div>
+
+
+
+	<script src="http://10.8.4.128:30843/static/bootstrap/jquery.min.js?bootstrap=3.3.7.1.dev1"></script>
+
+	<script type="text/javascript" src="http://10.8.4.128:30843/static/json-viewer/jquery.json-viewer.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			var data = JSON.parse('{"dateSrvImpt": "Fri, 14 Jun 2019 13:42:39 GMT", "dateUserRan": "Fri, 14 Jun 2019 08:42:27 GMT", "hostName": "AG0119WA016702", "ipconfig": [{"Windows IP Configuration": {"DNS Suffix Search List": "net.ads.state.tn.us", "Host Name": "AG0119WA016702", "IP Routing Enabled": "No", "Node Type": "Hybrid", "Primary Dns Suffix": "net.ads.state.tn.us", "WINS Proxy Enabled": "No"}}, {"Ethernet adapter Local Area Connection* 12:": {"Autoconfiguration Enabled": "Yes", "Connection-specific DNS Suffix": "net.ads.state.tn.us", "DHCP Enabled": "No", "DNS Servers": ["10.23.98.64", "10.15.98.64"], "Default Gateway": "0.0.0.0", "Description": "Juniper Networks Virtual Adapter", "IPv4 Address": "10.201.1.4(Preferred) ", "NetBIOS over Tcpip": "Enabled", "Physical Address": "02-05-85-7F-EB-80", "Subnet Mask": "255.255.255.255"}}, {"Ethernet adapter Ethernet:": {"Autoconfiguration Enabled": "Yes", "Connection-specific DNS Suffix": "nash.tenn", "DHCP Enabled": "Yes", "Description": "Intel(R) Ethernet Connection (2) I219-LM", "Media State": "Media disconnected", "Physical Address": "F4-30-B9-CB-8D-37"}}, {"Ethernet adapter Npcap Loopback Adapter:": {"Autoconfiguration Enabled": "Yes", "Autoconfiguration IPv4 Address": "169.254.242.147(Preferred) ", "Connection-specific DNS Suffix": "", "DHCP Enabled": "Yes", "Default Gateway": "", "Description": "Npcap Loopback Adapter", "NetBIOS over Tcpip": "Enabled", "Physical Address": "02-00-4C-4F-4F-50", "Subnet Mask": "255.255.0.0"}}, {"Ethernet adapter Ethernet 2:": {"Autoconfiguration Enabled": "Yes", "Autoconfiguration IPv4 Address": "169.254.218.162(Preferred) ", "Connection-specific DNS Suffix": "", "DHCP Enabled": "Yes", "Default Gateway": "", "Description": "Npcap Loopback Adapter", "NetBIOS over Tcpip": "Enabled", "Physical Address": "02-00-4C-4F-4F-50", "Subnet Mask": "255.255.0.0"}}, {"Wireless LAN adapter Local Area Connection* 1:": {"Autoconfiguration Enabled": "Yes", "Connection-specific DNS Suffix": "", "DHCP Enabled": "Yes", "Description": "Microsoft Wi-Fi Direct Virtual Adapter", "Media State": "Media disconnected", "Physical Address": "34-F6-4B-8A-81-36"}}, {"Wireless LAN adapter Local Area Connection* 2:": {"Autoconfiguration Enabled": "Yes", "Connection-specific DNS Suffix": "", "DHCP Enabled": "Yes", "Description": "Microsoft Wi-Fi Direct Virtual Adapter #2", "Media State": "Media disconnected", "Physical Address": "36-F6-4B-8A-81-35"}}, {"Wireless LAN adapter Wi-Fi:": {"Autoconfiguration Enabled": "Yes", "Connection-specific DNS Suffix": "", "DHCP Enabled": "Yes", "DHCP Server": "10.100.0.1", "DNS Servers": ["8.8.8.8", ""], "Default Gateway": "10.100.0.1", "Description": "Intel(R) Dual Band Wireless-AC 7265", "IPv4 Address": "10.100.0.125(Preferred) ", "Lease Expires": "Friday, June 14, 2019 12:32:40 PM", "Lease Obtained": "Friday, June 14, 2019 6:32:39 AM", "NetBIOS over Tcpip": "Enabled", "Physical Address": "34-F6-4B-8A-81-35", "Subnet Mask": "255.255.255.0"}}, {"Ethernet adapter Bluetooth Network Connection:": {"Autoconfiguration Enabled": "Yes", "Connection-specific DNS Suffix": "", "DHCP Enabled": "Yes", "Description": "Bluetooth Device (Personal Area Network)", "Media State": "Media disconnected", "Physical Address": "34-F6-4B-8A-81-39"}}, {"Mobile Broadband adapter Cellular:": {"Connection-specific DNS Suffix": "", "DHCP Enabled": "No", "Description": "HP lt4120 Snapdragon X5 LTE", "Media State": "Media disconnected", "Physical Address": "9C-B9-86-58-5F-44"}}], "pingGoglDns": {"ipAddr": "8.8.8.8", "latencyAvg": "37", "latencyMax": "39", "latencyMin": "37", "pingLossPrct": "0"}, "pingNdclDns": {"ipAddr": "10.23.98.64", "latencyAvg": "28", "latencyMax": "29", "latencyMin": "27", "pingLossPrct": "0"}, "pingSdcDns": {"ipAddr": "10.15.98.64", "latencyAvg": "31", "latencyMax": "38", "latencyMin": "28", "pingLossPrct": "0"}, "pingTnGov": {"ipAddr": "10.15.5.143", "latencyAvg": "29", "latencyMax": "30", "latencyMin": "29", "pingLossPrct": "0"}, "procInfo": [{"memory": 110356, "proc": "dwm.exe", "procId": "1356", "session": "Console"}, {"memory": 45024, "proc": "svchost.exe", "procId": "2248", "session": "Services"}, {"memory": 125708, "proc": "svchost.exe", "procId": "2768", "session": "Services"}, {"memory": 0, "proc": "Memory Compression", "procId": "3164", "session": "3164"}, {"memory": 47100, "proc": "svchost.exe", "procId": "4940", "session": "Services"}, {"memory": 84636, "proc": "mongod.exe", "procId": "5708", "session": "Services"}, {"memory": 61352, "proc": "CcmExec.exe", "procId": "7996", "session": "Services"}, {"memory": 54060, "proc": "SearchIndexer.exe", "procId": "4328", "session": "Services"}, {"memory": 49524, "proc": "ccSvcHst.exe", "procId": "7328", "session": "Services"}, {"memory": 68884, "proc": "PulseSecureService.exe", "procId": "1704", "session": "Services"}, {"memory": 97944, "proc": "SmartAudio3.exe", "procId": "8748", "session": "Console"}, {"memory": 65576, "proc": "ctfmon.exe", "procId": "8760", "session": "Console"}, {"memory": 177164, "proc": "explorer.exe", "procId": "9100", "session": "Console"}, {"memory": 109644, "proc": "ShellExperienceHost.exe", "procId": "8548", "session": "Console"}, {"memory": 201444, "proc": "SearchUI.exe", "procId": "9224", "session": "Console"}, {"memory": 59700, "proc": "RuntimeBroker.exe", "procId": "9336", "session": "Console"}, {"memory": 170920, "proc": "CiscoJabber.exe", "procId": "10184", "session": "Console"}, {"memory": 59692, "proc": "RPCSuite.exe", "procId": "11092", "session": "Console"}, {"memory": 41296, "proc": "SCNotification.exe", "procId": "11208", "session": "Console"}, {"memory": 59032, "proc": "Taskmgr.exe", "procId": "6732", "session": "Console"}, {"memory": 507924, "proc": "firefox.exe", "procId": "6956", "session": "Console"}, {"memory": 89704, "proc": "firefox.exe", "procId": "12012", "session": "Console"}, {"memory": 165968, "proc": "firefox.exe", "procId": "10956", "session": "Console"}, {"memory": 113852, "proc": "firefox.exe", "procId": "7008", "session": "Console"}, {"memory": 45692, "proc": "WindowsInternal.Composabl", "procId": "10980", "session": "Console"}, {"memory": 49684, "proc": "LockApp.exe", "procId": "14260", "session": "Console"}, {"memory": 285068, "proc": "firefox.exe", "procId": "9796", "session": "Console"}, {"memory": 148760, "proc": "OUTLOOK.EXE", "procId": "13000", "session": "Console"}, {"memory": 69272, "proc": "powershell.exe", "procId": "13528", "session": "Console"}, {"memory": 71292, "proc": "powershell.exe", "procId": "16736", "session": "Console"}, {"memory": 70392, "proc": "powershell.exe", "procId": "17840", "session": "Console"}, {"memory": 88100, "proc": "robo3t.exe", "procId": "9760", "session": "Console"}, {"memory": 1, "proc": "notepad", "procId": ".exe", "session": "3404"}, {"memory": 798836, "proc": "eclipse.exe", "procId": "18356", "session": "Console"}, {"memory": 174804, "proc": "firefox.exe", "procId": "8072", "session": "Console"}, {"memory": 82952, "proc": "mongod.exe", "procId": "2536", "session": "Console"}, {"memory": 157948, "proc": "firefox.exe", "procId": "19228", "session": "Console"}, {"memory": 172628, "proc": "firefox.exe", "procId": "16012", "session": "Console"}, {"memory": 183060, "proc": "firefox.exe", "procId": "14500", "session": "Console"}, {"memory": 211916, "proc": "firefox.exe", "procId": "18684", "session": "Console"}, {"memory": 53988, "proc": "WINWORD.EXE", "procId": "18300", "session": "Console"}, {"memory": 207564, "proc": "firefox.exe", "procId": "16132", "session": "Console"}, {"memory": 51280, "proc": "TaniumClient.exe", "procId": "7716", "session": "Services"}], "statusDict": {"pingGoglDns": {"Average Latency": 37, "Message": "No ping loss to 8.8.8.8 and latency should be acceptable for voice and all other apps.", "Ping Loss": 0, "State": "OK"}, "pingNdclDns": {"Average Latency": 28, "Message": "No ping loss to 10.23.98.64 and latency should be acceptable for voice and all other apps.", "Ping Loss": 0, "State": "OK"}, "pingSdcDns": {"Average Latency": 31, "Message": "No ping loss to 10.15.98.64 and latency should be acceptable for voice and all other apps.", "Ping Loss": 0, "State": "OK"}, "pingTnGov": {"Average Latency": 29, "Message": "No ping loss to 10.15.5.143 and latency should be acceptable for voice and all other apps.", "Ping Loss": 0, "State": "OK"}}, "ticketNum": 0, "traceGoglDns": {"ipAddr": "8.8.8.9", "traceList": [{"ipAddrHop": "10.201.200.200", "tracOrdrNum": "1", "trip1time": "27", "trip2time": "31", "trip3time": "*"}, {"ipAddrHop": "10.170.44.81", "tracOrdrNum": "2", "trip1time": "37", "trip2time": "28", "trip3time": "28"}, {"ipAddrHop": "10.122.253.17", "tracOrdrNum": "3", "trip1time": "38", "trip2time": "32", "trip3time": "28"}, {"ipAddrHop": "12.118.97.17", "tracOrdrNum": "4", "trip1time": "32", "trip2time": "30", "trip3time": "31"}, {"ipAddrHop": "12.122.148.194", "tracOrdrNum": "5", "trip1time": "35", "trip2time": "35", "trip3time": "35"}, {"ipAddrHop": "12.122.2.5", "tracOrdrNum": "6", "trip1time": "49", "trip2time": "39", "trip3time": "40"}, {"ipAddrHop": "12.122.96.85", "tracOrdrNum": "7", "trip1time": "38", "trip2time": "36", "trip3time": "33"}, {"ipAddrHop": "12.255.10.2", "tracOrdrNum": "8", "trip1time": "*", "trip2time": "35", "trip3time": "36"}, {"ipAddrHop": ".", "tracOrdrNum": "9", "trip1time": "*", "trip2time": "*", "trip3time": "*"}, {"ipAddrHop": "216.239.43.24", "tracOrdrNum": "10", "trip1time": "37", "trip2time": "39", "trip3time": "35"}, {"ipAddrHop": "108.170.249.44", "tracOrdrNum": "11", "trip1time": "38", "trip2time": "80", "trip3time": "37"}, {"ipAddrHop": "108.170.236.236", "tracOrdrNum": "12", "trip1time": "36", "trip2time": "35", "trip3time": "36"}, {"ipAddrHop": "72.14.239.17", "tracOrdrNum": "13", "trip1time": "55", "trip2time": "35", "trip3time": "40"}, {"ipAddrHop": "216.239.47.119", "tracOrdrNum": "14", "trip1time": "37", "trip2time": "37", "trip3time": "37"}, {"ipAddrHop": ".", "tracOrdrNum": "15", "trip1time": "*", "trip2time": "*", "trip3time": "*"}]}, "traceNdcDns": {"ipAddr": "10.23.98.64", "traceList": [{"ipAddrHop": "10.201.200.200", "tracOrdrNum": "1", "trip1time": "29", "trip2time": "28", "trip3time": "*"}, {"ipAddrHop": "10.170.44.81", "tracOrdrNum": "2", "trip1time": "28", "trip2time": "26", "trip3time": "26"}, {"ipAddrHop": "172.30.1.33", "tracOrdrNum": "3", "trip1time": "47", "trip2time": "29", "trip3time": "28"}, {"ipAddrHop": "172.30.1.22", "tracOrdrNum": "4", "trip1time": "32", "trip2time": "30", "trip3time": "28"}, {"ipAddrHop": "172.30.16.9", "tracOrdrNum": "5", "trip1time": "*", "trip2time": "399", "trip3time": "28"}, {"ipAddrHop": "10.23.98.64", "tracOrdrNum": "6", "trip1time": "38", "trip2time": "28", "trip3time": "30"}]}, "traceSdcDns": {"ipAddr": "10.15.98.64", "traceList": [{"ipAddrHop": "10.201.200.200", "tracOrdrNum": "1", "trip1time": "27", "trip2time": "*", "trip3time": "39"}, {"ipAddrHop": "10.170.44.81", "tracOrdrNum": "2", "trip1time": "95", "trip2time": "32", "trip3time": "28"}, {"ipAddrHop": "172.30.1.17", "tracOrdrNum": "3", "trip1time": "35", "trip2time": "28", "trip3time": "28"}, {"ipAddrHop": "172.30.1.14", "tracOrdrNum": "4", "trip1time": "30", "trip2time": "30", "trip3time": "27"}, {"ipAddrHop": "172.29.1.6", "tracOrdrNum": "5", "trip1time": "32", "trip2time": "43", "trip3time": "29"}, {"ipAddrHop": "172.29.16.9", "tracOrdrNum": "6", "trip1time": "*", "trip2time": "223", "trip3time": "35"}, {"ipAddrHop": "10.15.98.64", "tracOrdrNum": "7", "trip1time": "33", "trip2time": "32", "trip3time": "37"}]}, "traceTnGov": {"ipAddr": "10.15.5.143", "traceList": [{"ipAddrHop": "10.201.200.200", "tracOrdrNum": "1", "trip1time": "33", "trip2time": "*", "trip3time": "30"}, {"ipAddrHop": "10.170.44.81", "tracOrdrNum": "2", "trip1time": "92", "trip2time": "32", "trip3time": "28"}, {"ipAddrHop": "172.30.1.17", "tracOrdrNum": "3", "trip1time": "32", "trip2time": "28", "trip3time": "28"}, {"ipAddrHop": "172.30.1.14", "tracOrdrNum": "4", "trip1time": "29", "trip2time": "29", "trip3time": "28"}, {"ipAddrHop": "172.29.1.6", "tracOrdrNum": "5", "trip1time": "41", "trip2time": "40", "trip3time": "32"}, {"ipAddrHop": "172.29.16.9", "tracOrdrNum": "6", "trip1time": "*", "trip2time": "222", "trip3time": "32"}, {"ipAddrHop": "10.15.5.143", "tracOrdrNum": "7", "trip1time": "29", "trip2time": "37", "trip3time": "*"}, {"ipAddrHop": "10.15.5.143", "tracOrdrNum": "8", "trip1time": "31", "trip2time": "29", "trip3time": "30"}]}, "transId": 1, "userId": "net/ag0394v"}');
+			var processes = data["procInfo"]
+
+				$('#json-renderer').jsonViewer(data, {collapsed: false, withQuotes: true});
+			});
+
+	</script>
+
+</div>
+
+    <!-- Begin Footer -->
+    <div class="tn-footer">
+        <footer id="footer">
+            <div id="footer-top">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 columns">
+                        <ul class="inline-list">
+                           <li id="footer-livechat" class>
+                        <a href="#" class="icon-chat" onClick="openFooterChat()" target="_blank">
+                            Live Chat
+                        </a>
+                        <div class="livechat">
+                            <script type='text/javascript' >
+                                function openFooterChat() {
+                                    window.open ("https://help.tn.gov/sn_customerservice_tn_chat_selector.do", "popup", "width=900, height=600"); 
+                                 };
+                            </script>
+                        </div>
+                    </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 columns text-right">
+                        <ul class="inline-list">
+                            <li><a href="https://www.tn.gov/help-tn-main.html" class="icon-help-circled">Help</a></li>
+                            <li id="footer-share" class="has-drop"><a href="#" class="icon-export">Share</a>
+                        <div class="drop right">
+                            <div class="box">
+                                <span
+                                    class='st_sharethis_large'
+                                    displayText='ShareThis'></span>
+                                <span
+                                    class='st_facebook_large'
+                                    displayText='Facebook'></span>
+                                <span
+                                    class='st_twitter_large'
+                                    displayText='Tweet'></span>
+                                <span
+                                    class='st_googleplus_large'
+                                    displayText='Google +'></span>
+                                <span
+                                    class='st_linkedin_large'
+                                    displayText='LinkedIn'></span>
+                                <script type="text/javascript">
+                                    var switchTo5x = true;
+                                </script>
+                                <script
+                                    type="text/javascript"
+                                    src="https://ws.sharethis.com/button/buttons.js"></script>
+                                <script type="text/javascript">
+                                    if (typeof stLight !== 'undefined') {
+                                        stLight.options({
+                                            publisher : "5dc356bf-5442-455c-b483-ab8ca7d8cd15",
+                                            doNotHash : false,
+                                            doNotCopy : false,
+                                            hashAddressBar : false
+                                        });
+                                    }
+                                </script>
+                            </div>
+                        </div></li>
+                           <li id="footer-translate">
+				<a href="#" class="icon-book">Translate</a>
+				<div class="drop right">
+				  <div class="box">
+					<div id="google_translate_element"></div>
+				  </div>
+				</div>
+			  </li>
+                            <li id="footer-fontsize">
+                                <a href="#" class="icon-font">Font Size</a>
+                                <div class="drop right">
+                                    <div class="box">
+                                        <ul class="inline-list">
+                                            <li><a class="button" data-font-size="small">a-</a></li>
+                                            <li><a class="button" data-font-size="normal">Normal</a></li>
+                                            <li><a class="button" data-font-size="large">A+</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#" class="starball"><img src="https://tn.gov/etc/clientlibs/tncore/main/img/footer-starball.png" alt="Tristar" width="100%"></a>
+            </div>
+            <div id="footer-bottom">
+                <div class="row">
+                    <div class="large-12 medium-12 columns">
+			<ul class="inline-list">
+			  <li><a href="https://teamtn.gov" class="first">TeamTN.gov</a></li>
+			  
+			</ul>
+		  </div>
+		  <div class="large-12 medium-12 columns text-right">
+			<ul class="inline-list">
+			 <li></li>
+			</ul>
+		  </div>
+                </div>
+            </div>
+        </footer>
+			<!--  Add the TNCore js   -->
+	<script type="text/javascript" src="https://tn.gov/etc/clientlibs/tncore/main.js"></script>
+    </div>
+    <!-- End Footer -->
+	
+
+</body></html>
