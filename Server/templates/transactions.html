@@ -16,6 +16,85 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta charset="utf-8">
+		
+		<style>
+		html {
+			font-size: 15px;
+		}
+			body {
+				font-family: 'Open Sans', sans-serif;
+				letter-spacing: -0.025rem;
+				color: #131e29;
+				background: #f9f9f9 url(main/img/star-ball-bg.png) no-repeat 101% 75px;
+				background-attachment: fixed;
+			}
+			.btn-primary{
+			background-color: #3D3E40;
+				border-color: #6E7073;
+			}
+			.btn-primary:hover{
+			background-color: #6E7073;
+				border-color: #3D3E40;
+			}
+			.daterangepicker td.active, .daterangepicker td.active:hover {
+				background-color: #3D3E40;
+				}
+		.fixed-table-body {
+			overflow-x: auto;
+			overflow-y: auto;
+			height:auto;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+		.fixed-table-pagination {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+		.fixed-table-container thead th {
+			height: 0;
+			padding: 0;
+			margin: 0;
+			background-color: #3D3E40;
+			color: #fff;
+			border-left: 1px solid #6E7073;
+		}
+		.fixed-table-container thead th:first-child:not([data-not-first-th]) {
+			border-left: none;
+			border-top-left-radius: 0px;
+			-webkit-border-top-left-radius: 0px;
+			-moz-border-radius-topleft: 0px;
+		}
+		.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+  
+			background-color: #3D3E40;
+			border-color: #3D3E40;
+		}
+		.pagination>li>a, .pagination>li>span, .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
+		    color: #3D3E40;
+		}
+		.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover{
+			background-color: #3D3E40;
+		}
+		.table-no-bordered td{
+			padding: 10px;
+		
+		}
+		.table-no-bordered tr:nth-child(even){
+			background-color: #eee;
+		}
+		.form-holder {
+			margin: 0 auto;
+			max-width: 1200px;
+			padding-top: 20px;
+			width: 100%;
+		}
+		.form-holder form{
+			float: left;
+			margin-right: 40px;
+			height: 50px;
+		}
+		</style>
+		
 		{% endblock %}
 	
 	</head>
@@ -24,12 +103,13 @@
 {% block content %}
 
 <body>
-
-<div style="margin-left: 20px;margin-right: 20px;margin-top: 20px;margin-bottom: 20px;">	
+  <div id="main" class="basic">
+   <div style="margin-left: 20px;margin-right: 20px;margin-top: 20px;margin-bottom: 20px;">	
    	
 	
 	<div>
-			<div>
+	
+			<div class="form-holder">
 				<form action="" method="POST">
 				Transaction: <input type="text" name="transNum" /> <button type="Submit">Search</button>
 				</form>
@@ -37,6 +117,7 @@
 				<form action="" method="POST">
 				Date Range: <input type="text" name="dateRange" /> <button type="Submit">Search</button>
 				</form>
+
 
 <script>
 $(function() {
