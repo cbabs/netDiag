@@ -54,7 +54,7 @@ class NetdiagClient(object):
 
 def main():
 
-    tStamp = datetime.datetime.now()
+    tStamp = datetime.datetime.now().replace(microsecond=0)
 
 
     taskDict = {"systemInfo": "systeminfo",
@@ -96,8 +96,6 @@ def main():
     #   print("{}: {}".format(k, v))
 
     #diag = NetdiagClient("10.8.4.128", 30843)
-
-    print(retrnDict["systemInfo"])
 
     diag = NetdiagClient("127.0.0.1", 8443)
 
