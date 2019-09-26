@@ -1,24 +1,152 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 	{% block head %}
-			<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
-		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='bootstrap-table/src/bootstrap-table.css') }}">
-	<link href="/static/bootstrap/css/bootstrap.min.css?bootstrap=3.3.7.1.dev1" rel="stylesheet">
-	<script src="/static/bootstrap/jquery.min.js?bootstrap=3.3.7.1.dev1"></script>
-	<script src="/static/bootstrap/js/bootstrap.min.js?bootstrap=3.3.7.1.dev1"></script>
-	<script src="/static/bootstrap-table/src/bootstrap-table.js"></script>
-  	<script src="/static/bootstrap-table/src/bootstrap-table-en-US.js"></script>
-	<link href="/static/json-viewer/jquery.json-viewer.css" rel="stylesheet">
+		<!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}"> -->
+		
+		
+		 
 
-	<script type="text/javascript" src="/static/json-viewer/jquery.json-viewer.js"></script>
-	<script type="text/javascript">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>Transaction Record</title>
+
+	
+	<style>
+
+	body {
+		font-family: 'Open Sans', sans-serif;
+		letter-spacing: -0.025rem;
+		color: #131e29;
+		background: #f9f9f9 no-repeat 101% 75px;
+		background-attachment: fixed;
+		}
+		
+		table {
+		border-spacing: 5px 0rem;
+		}
+		
+		.text-center, .tab-content, .tn-tabs {
+			max-width: 1200px !important;
+			margin: 0 auto;	
+		}
+		.tn-tabs ul {
+			font-size: 15px;
+		}
+		a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+		display: none;
+		}
+		#sidebar ul li.active > a, a[aria-expanded="true"] {
+			background: transparent;
+		}
+		.tab-content {
+			margin-bottom: 20px;
+		}
+
+		.fixed-table-container thead th:first-child:not([data-not-first-th]) {
+			border-left: none;
+			border-top-left-radius: 0px;
+			-webkit-border-top-left-radius: 0px;
+			-moz-border-radius-topleft: 0px;
+		}
+		.fixed-table-body {
+			overflow-x: auto;
+			overflow-y: auto;
+			height:auto;
+		}
+		.fixed-table-container thead th {
+			height: 0;
+			padding: 0;
+			margin: 5px;
+			background-color: #3D3E40;
+			color: #fff;
+			border-left: 1px solid #6E7073;
+		}
+		.table-no-bordered td{
+			padding: 5px;
+			
+		
+		}
+		.table-no-bordered tr:nth-child(even){
+			background-color: #eee;			
+		}
+		.form-holder {
+			margin: 0 auto;
+			max-width: 1200px;
+			padding-top: 20px;
+			width: 100%;
+		}
+		.form-holder form{
+			float: left;
+			margin-right: 40px;
+			height: 50px;
+		}
+		h4 {
+			padding-top: 20px;
+			font-weight: bold;
+		}
+		.hostinfo {
+			width: 100%;
+			max-width: 1200px;
+			background-color: #eee;
+			padding: 20px;
+			margin: 0 auto;
+			margin-bottom: 20px;
+		}
+		p, p strong {
+			color: #000;
+			}
+			
+		nav > .nav.nav-tabs{
+		
+		  border: none;
+		    color:#fff;
+		    background:#272e38;
+		    border-radius:0;
+		
+		}
+		nav > div a.nav-item.nav-link,
+		nav > div a.nav-item.nav-link.active
+		{
+		  border: none;
+		    padding: 18px 25px;
+		    color:#fff;
+		    background:#272e38;
+		    border-radius:0;
+		}
+		
+		nav > div a.nav-item.nav-link.active:after
+		 {
+		  content: "";
+		  position: relative;
+		  bottom: -60px;
+		  left: -10%;
+		  border: 15px solid transparent;
+		  border-top-color: #e74c3c ;
+		}
+		.tab-content{
+		  background: #fdfdfd;
+		    line-height: 25px;
+		    border: 1px solid #ddd;
+		    border-top:5px solid #e74c3c;
+		    border-bottom:5px solid #e74c3c;
+		    padding:30px 25px;
+		}
+		
+		nav > div a.nav-item.nav-link:hover,
+		nav > div a.nav-item.nav-link:focus	
+		{
+		  border: none;
+		    background: #e74c3c;
+		    color:#fff;
+		    border-radius:0;
+		    transition:background 0.20s linear;
+		}	
+		</style>
+	
 
 
-	</script>
-	</head>
-
-
+</head>
 
 
 
@@ -26,9 +154,56 @@
 
 {% block content %}
 
+<body>
 
-<div class="text-center">
-	<table data-toggle="table" data-pagination="true" data-search="false" data-toggle="table" class="table-no-bordered" data-classes="table-no-bordered">
+
+<div class="container">
+
+	{% for k,v in data.items() %}
+		{% if v is not sequence %}
+  		<table data-pagination="true" data-search="false" data-toggle="table" class="table-no-bordered" data-classes="table-no-bordered">		
+		<tr>
+		<td>{{ k }}</td>
+		<td> {{ v }}</td>
+		</tr>
+		</table>
+		{% endif %}
+    {% endfor %}
+
+</div>
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 ">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+	{% for k,v in data.items() %}
+		{% if v is not string and v is sequence %}
+          <a class="nav-item nav-link" id="nav-{{k}}-tab" href="#nav-{{k}}" role="tab" data-toggle="tab" aria-controls="nav-{{k}}" aria-selected="false">{{k}}</a>
+        {% endif %}
+    {% endfor %}
+       </div>
+     </nav>
+	
+	
+  <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+
+  {% for k,v in data.items() %}
+  
+  		
+  
+  		{% if k == "statusDict" %} 
+  		
+  	    <div class="tab-pane fade show active" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
+  		
+  		
+  		<table data-pagination="true" data-search="false" data-toggle="table" class="table-no-bordered" data-classes="table-no-bordered">
 	  <thead>
 	    <tr>
 	      <th >Name</th>
@@ -40,51 +215,172 @@
 	  </thead>
 	  <tbody>
 
-	{% for k,v in data['statusDict'].items() %}
+			{% for k2,v2 in data['statusDict'].items() %}
 	    <tr>
-	      <td>{{ k }}</td>
-	      <td>{{ v['State'] }}</td>
-	      <td>{{ v['Ping Loss'] }}</td>
-	      <td>{{ v['Average Latency'] }}</td>
-	      <td>{{ v['Message'] }}</td>
+	      <td>{{ k2 }}</td>
+	      <td>{{ v2['State'] }}</td>
+	      <td>{{ v2['Ping Loss'] }}</td>
+	      <td>{{ v2['Average Latency'] }}</td>
+	      <td>{{ v2['Message'] }}</td>
 	    </tr>
 	   {% endfor %}
+	
+
 
 	   </tbody>
 	 </table>
+	 	</div>   
+  
+  		{% continue %}
+  		
+  		{% elif k == "procInfo" %} 
+  		
+  	    <div class="tab-pane fade" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
+  		
+  		
+  		<table data-pagination="true" data-search="false" data-toggle="table" class="table-no-bordered" data-classes="table-no-bordered">
+	  <thead>
+	    <tr>
+	      <th>Memory</th>
+	      <th>Proc Name</th>
+	      <th>Proc ID</th>
+	      <th>Session</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+			{% for vDict in v %}
+	    <tr>
+	      <td>{{ vDict['memory'] }}</td>
+	      <td>{{ vDict['proc'] }}</td>
+	      <td>{{ vDict['pricId'] }}</td>
+	      <td>{{ vDict['session'] }}</td>
+	    </tr>
 
+	   {% endfor %}  
 
-</div>
+	   </tbody>
+	 </table>
+  
+  	</div> 
+  		{% continue %}
+  		
+  		
+		
+		
+		{% elif "trace" in k %}
+		 
+		 <div class="tab-pane fade" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
+		  
+		  <table data-pagination="true" data-search="false" data-toggle="table" class="table-no-bordered" data-classes="table-no-bordered">
+	  <thead>
+	    <tr>
+	      <th>Hop Number</th>
+	      <th>Trip 1 Latency</th>
+	      <th>Trip 2 Latency</th>
+	      <th>Trip 3 Latency</th>
+	      <th>Hop IP Address</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+			{% for vDict in v['traceList'] %}
+	    <tr>
+	      <td>{{ vDict['tracOrdrNum'] }}</td>
+	      <td>{{ vDict['trip1time'] }}</td>
+	      <td>{{ vDict['trip2time'] }}</td>
+	      <td>{{ vDict['trip3time'] }}</td>
+	      <td>{{ vDict['ipAddrHop'] }}</td>
+	    </tr>
 
-<div style="margin-left: 20px;margin-right: 20px;">
-	<div id="jsonReturn">
+	   {% endfor %}  
 
-		{% if data %}
+	   </tbody>
+	 </table>
+  
+  	</div> 
+  		{% continue %}
+  
+	    
+	
+		{% elif k == "ipconfig" %} 
+	
+	    <div class="tab-pane fade" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
 
-			<pre id="json-renderer"></pre>
+		{% for vList in v %}
+		
+		
+		{% for k2,v2 in vList.items() %}
+		<h4>{{ k2 }}</h4>
 
-		{% endif %}
+               {% for k3,v3 in v2.items() %}
+			
+		  <table class="table-no-bordered">
+		  <tr>
+		  <td>{{ k3 }}:</td>
+		  <td> {{ v3 }}</td>
+		  </tr>
+		  </table>
+		  
+		  		{% endfor %}
+		  	{% endfor %}
+		{% endfor %}
+		
+		</div>
+		
+			
+	 {% elif v|is_list %}
+  
+    <div class="tab-pane fade" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
+			{% for vlist in v %}
+	 		  {% for v2 in vlist %}
+	 		  
+	 	<table class="table-no-bordered">
+		<tr>
+		<td>{{ v2 }}</td>
+		<td> {{ k2 }}</td>
+		</tr>
+		</table>
 
-		<br/>
-
+           {% endfor %}
+	     {% endfor %}
 	</div>
-</div>
+	    {% continue %}
+	
+	        {% elif v|is_dict %}
+  
+    <div class="tab-pane fade" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
+
+	 		{% for v2,k2 in v.items() %}
+		<table class="table-no-bordered">
+		<tr>
+		<td>{{ v2 }}</td>
+		<td> {{ k2 }}</td>
+		</tr>
+		</table>
+		
+	
+			{% endfor %}
+	</div>
+		  
+		{% continue %}
+		
+	
+      
+    {% endif %}
+  {% endfor %}
+  
+    </div>
+  
+      </div>
+    </div>
+  </div>
 
 
 
-	<script src="/static/bootstrap/jquery.min.js?bootstrap=3.3.7.1.dev1"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
 
-	<script type="text/javascript" src="/static/json-viewer/jquery.json-viewer.js"></script>
-	<script type="text/javascript">
-
-		$(document).ready(function() {
-			var data = JSON.parse('{{ data|tojson|safe }}');
-			var processes = data["procInfo"]
-
-				$('#json-renderer').jsonViewer(data, {collapsed: false, withQuotes: true});
-			});
-
-	</script>
-
-{% endblock %}
+</body>
 </html>
+{% endblock %}
