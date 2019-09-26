@@ -16,7 +16,6 @@ from server import NetDiag
 
 db = MongoDb()
 
-
 def is_list(value):
     return isinstance(value, list)
 
