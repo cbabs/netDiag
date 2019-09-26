@@ -114,4 +114,4 @@ venv.bak/
 test*
 
 # Ignore Leslie UI files
-./Server/leslie/
+./Server/leslie/*
