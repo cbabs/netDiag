@@ -3,6 +3,7 @@ from Server import app
 from pymongo import MongoClient
 import time
 import datetime
+from dominate.tags import tr
 
 class MongoDb(object):
 
@@ -23,7 +24,13 @@ class MongoDb(object):
 
     #Gets records by date
     def getTransDates(self, start, end):
-        trans = self.db.tickets.find({'dateUserRan': {'$lt': end, '$gt': start}})
+        
+        
+        print(start, end)
+        
+        print(type(start))
+        
+        trans = self.db.tickets.find({'dateUserRan': {'$lt': end, '$gt': start}})       
 
         return trans
 
@@ -77,7 +84,7 @@ class MongoDb(object):
 
         #Dict for transaction record
         jsnData["transId"] = nextTransId
-
+        
         #Add doc to collections
         self.db.tickets.insert_one(jsnData).inserted_id
 
