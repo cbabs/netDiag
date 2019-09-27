@@ -63,7 +63,6 @@ def main():
                 "trcRtSrvcNow": "tracert -d -w 250 -h 15 tn.service-now.com",
                  "trcRtNdcDns": "tracert -d -w 250 -h 10 10.23.98.64",
                  "trcRtSdcDns": "tracert -d -w 250 -h 10 10.15.98.64",
-                 "trcRtTnGov":"tracert -d -w 250 -h 10 tn.gov",
                  "pgPubDns":"ping 8.8.8.8", "pgSdcDns":"ping 10.15.98.64",
                  "pgTnGov": "ping tn.gov", "pgNdcDns": "ping 10.23.98.64",
                  "pgOfc365": "ping outlook.office365.com",
@@ -71,7 +70,8 @@ def main():
                  "wlanStat": "netsh wlan show interfaces",
                  "ipAdd": "ipconfig /all",
                  "topAppMem": 'tasklist /fi "memusage gt 40000"',
-                 "hostName": "hostname", "userName": "whoami" }
+                 "hostName": "hostname", "userName": "whoami",
+                 "wireless": "Netsh WLAN show interfaces" }
 
 
 

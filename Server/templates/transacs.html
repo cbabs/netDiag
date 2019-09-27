@@ -326,6 +326,26 @@
 		
 		</div>
 		
+		{% elif k == "wireless" %} 
+	
+	    <div class="tab-pane fade" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
+
+		{% for vList in v %}
+		
+		
+		{% for k2,v2 in vList.items() %}
+
+		  <table class="table-no-bordered">
+		  <tr>
+		  <td>{{ k2 }}:</td>
+		  <td> {{ v2 }}</td>
+		  </tr>
+		  </table>
+		  	{% endfor %}
+		{% endfor %}
+		
+		</div>
+		
 			
 	 {% elif v|is_list %}
   

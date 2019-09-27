@@ -45,7 +45,7 @@ class NetDiag(object):
 
         jsonData = jsonData["netData"]
 
-        print(jsonData["systemInfo"])
+        print(jsonData["wireless"])
 
         # Dict for transaction record
         diagRecord = {
@@ -61,14 +61,14 @@ class NetDiag(object):
             "traceSrvcNow": self.fltrTracRt(jsonData["trcRtSrvcNow"]),
             "traceSdcDns": self.fltrTracRt(jsonData["trcRtSdcDns"]),
             "traceNdcDns": self.fltrTracRt(jsonData["trcRtNdcDns"]),
-            "traceTnGov": self.fltrTracRt(jsonData["trcRtTnGov"]),
             "pingGoglDns": self.fltrPing(jsonData["pgPubDns"]),
             "pingOfc365": self.fltrPing(jsonData["pgOfc365"]),
             "pingSrvcNow": self.fltrPing(jsonData["pgSrvcNow"]),
             "pingSdcDns": self.fltrPing(jsonData["pgSdcDns"]),
             "pingNdclDns": self.fltrPing(jsonData["pgNdcDns"]),
             "pingTnGov": self.fltrPing(jsonData["pgTnGov"]),
-            "procInfo": self.fltrProcInfo(jsonData["topAppMem"])
+            "procInfo": self.fltrProcInfo(jsonData["topAppMem"]),
+            "wireless": self.fltrWireless(jsonData["wireless"])
             }
 
         statusDict = self.createStatusDict(diagRecord)
@@ -410,6 +410,46 @@ class NetDiag(object):
                 continue
 
         return retrnDict # Return dict
+    
+    def fltrWireless(self, data):
+
+        # Regex
+
+        data = data.splitlines() # Create list from input data
+        
+        retrnList = [] # List to be returned from func
+
+        for line in data:
+
+            if not line: continue # If line is empty, continue loop
+            
+            # Ignore empty lines
+            if re.search(r'[a-z]', line) is None: continue         
+            
+            # Create list of KV pairs
+            lineList = line.split(":")
+            
+            # Assign list items to KV pairs
+            k = lineList[0].strip()
+            v = lineList[1].strip() 
+            
+            # Ignore interface number line
+            if "There is " in k: continue
+
+            
+            # If k has name start a new dict for interface info
+            if k == "Name":
+                intrfacDict = {}
+                intrfacDict[k]=v
+            
+            intrfacDict[k]=v
+            
+            if "Hosted network status" == k:
+                intrfacDict[k]=v
+                retrnList.append(intrfacDict)
+
+        return retrnList # Return list
+
 
     # Send the transaction to DBs(ES and mongo)
     def sendTranToDbs(self, jsnData):
