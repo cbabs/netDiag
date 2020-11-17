@@ -3,15 +3,15 @@
 	<head>
 	{% block head %}
 		<!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}"> -->
-		
-		
-		 
+
+
+
 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<title>Transaction Record</title>
 
-	
+
 	<style>
 
 	body {
@@ -21,14 +21,14 @@
 		background: #f9f9f9 no-repeat 101% 75px;
 		background-attachment: fixed;
 		}
-		
+
 		table {
 		border-spacing: 5px 0rem;
 		}
-		
+
 		.text-center, .tab-content, .tn-tabs {
 			max-width: 1200px !important;
-			margin: 0 auto;	
+			margin: 0 auto;
 		}
 		.tn-tabs ul {
 			font-size: 15px;
@@ -64,11 +64,11 @@
 		}
 		.table-no-bordered td{
 			padding: 5px;
-			
-		
+
+
 		}
 		.table-no-bordered tr:nth-child(even){
-			background-color: #eee;			
+			background-color: #eee;
 		}
 		.form-holder {
 			margin: 0 auto;
@@ -96,14 +96,14 @@
 		p, p strong {
 			color: #000;
 			}
-			
+
 		nav > .nav.nav-tabs{
-		
+
 		  border: none;
 		    color:#fff;
 		    background:#272e38;
 		    border-radius:0;
-		
+
 		}
 		nav > div a.nav-item.nav-link,
 		nav > div a.nav-item.nav-link.active
@@ -114,7 +114,7 @@
 		    background:#272e38;
 		    border-radius:0;
 		}
-		
+
 		nav > div a.nav-item.nav-link.active:after
 		 {
 		  content: "";
@@ -132,18 +132,18 @@
 		    border-bottom:5px solid #e74c3c;
 		    padding:30px 25px;
 		}
-		
+
 		nav > div a.nav-item.nav-link:hover,
-		nav > div a.nav-item.nav-link:focus	
+		nav > div a.nav-item.nav-link:focus
 		{
 		  border: none;
 		    background: #e74c3c;
 		    color:#fff;
 		    border-radius:0;
 		    transition:background 0.20s linear;
-		}	
+		}
 		</style>
-	
+
 
 
 </head>
@@ -161,7 +161,7 @@
 
 	{% for k,v in data.items() %}
 		{% if v is not sequence %}
-  		<table data-pagination="true" data-search="false" data-toggle="table" class="table-no-bordered" data-classes="table-no-bordered">		
+  		<table data-pagination="true" data-search="false" data-toggle="table" class="table-no-bordered" data-classes="table-no-bordered">
 		<tr>
 		<td>{{ k }}</td>
 		<td> {{ v }}</td>
@@ -171,10 +171,6 @@
     {% endfor %}
 
 </div>
-
-
-
-
 
 
 <div class="container">
@@ -190,19 +186,22 @@
     {% endfor %}
        </div>
      </nav>
-	
-	
+
+
   <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
 
+
+
+
   {% for k,v in data.items() %}
-  
-  		
-  
-  		{% if k == "statusDict" %} 
-  		
+
+
+
+  		{% if k == "statusDict" %}
+
   	    <div class="tab-pane fade show active" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
-  		
-  		
+
+
   		<table data-pagination="true" data-search="false" data-toggle="table" class="table-no-bordered" data-classes="table-no-bordered">
 	  <thead>
 	    <tr>
@@ -224,20 +223,20 @@
 	      <td>{{ v2['Message'] }}</td>
 	    </tr>
 	   {% endfor %}
-	
+
 
 
 	   </tbody>
 	 </table>
-	 	</div>   
-  
+	 	</div>
+
   		{% continue %}
-  		
-  		{% elif k == "procInfo" %} 
-  		
+
+  		{% elif k == "procInfo" %}
+
   	    <div class="tab-pane fade" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
-  		
-  		
+
+
   		<table data-pagination="true" data-search="false" data-toggle="table" class="table-no-bordered" data-classes="table-no-bordered">
 	  <thead>
 	    <tr>
@@ -256,21 +255,21 @@
 	      <td>{{ vDict['session'] }}</td>
 	    </tr>
 
-	   {% endfor %}  
+	   {% endfor %}
 
 	   </tbody>
 	 </table>
-  
-  	</div> 
+
+  	</div>
   		{% continue %}
-  		
-  		
-		
-		
+
+
+
+
 		{% elif "trace" in k %}
-		 
+
 		 <div class="tab-pane fade" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
-		  
+
 		  <table data-pagination="true" data-search="false" data-toggle="table" class="table-no-bordered" data-classes="table-no-bordered">
 	  <thead>
 	    <tr>
@@ -291,48 +290,48 @@
 	      <td>{{ vDict['ipAddrHop'] }}</td>
 	    </tr>
 
-	   {% endfor %}  
+	   {% endfor %}
 
 	   </tbody>
 	 </table>
-  
-  	</div> 
+
+  	</div>
   		{% continue %}
-  
-	    
-	
-		{% elif k == "ipconfig" %} 
-	
+
+
+
+		{% elif k == "ipconfig" %}
+
 	    <div class="tab-pane fade" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
 
 		{% for vList in v %}
-		
-		
+
+
 		{% for k2,v2 in vList.items() %}
 		<h4>{{ k2 }}</h4>
 
                {% for k3,v3 in v2.items() %}
-			
+
 		  <table class="table-no-bordered">
 		  <tr>
 		  <td>{{ k3 }}:</td>
 		  <td> {{ v3 }}</td>
 		  </tr>
 		  </table>
-		  
+
 		  		{% endfor %}
 		  	{% endfor %}
 		{% endfor %}
-		
+
 		</div>
-		
-		{% elif k == "wireless" %} 
-	
+
+		{% elif k == "wireless" %}
+
 	    <div class="tab-pane fade" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
 
 		{% for vList in v %}
-		
-		
+
+
 		{% for k2,v2 in vList.items() %}
 
 		  <table class="table-no-bordered">
@@ -343,16 +342,16 @@
 		  </table>
 		  	{% endfor %}
 		{% endfor %}
-		
+
 		</div>
-		
-			
+
+
 	 {% elif v|is_list %}
-  
+
     <div class="tab-pane fade" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
 			{% for vlist in v %}
 	 		  {% for v2 in vlist %}
-	 		  
+
 	 	<table class="table-no-bordered">
 		<tr>
 		<td>{{ v2 }}</td>
@@ -364,9 +363,9 @@
 	     {% endfor %}
 	</div>
 	    {% continue %}
-	
+
 	        {% elif v|is_dict %}
-  
+
     <div class="tab-pane fade" id="nav-{{k}}" role="tabpanel" aria-labelledby="nav-{{k}}-tab">
 
 	 		{% for v2,k2 in v.items() %}
@@ -376,30 +375,29 @@
 		<td> {{ k2 }}</td>
 		</tr>
 		</table>
-		
-	
+
+
 			{% endfor %}
 	</div>
-		  
+
 		{% continue %}
-		
-	
-      
+
+
+
     {% endif %}
   {% endfor %}
-  
+
     </div>
-  
+
       </div>
     </div>
   </div>
 
 
-
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	
+
 
 </body>
 </html>

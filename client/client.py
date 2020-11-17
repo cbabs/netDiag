@@ -48,9 +48,12 @@ class NetdiagClient(object):
         serverCall = "http://{}:{}/_api/upload-diag".format(self.server, self.port)
         res = requests.post(serverCall, json = {"netData" : jsonData})
 
-        if res.ok:
-            print()
 
+
+        if res.ok:
+            print(f"Data sent:\n{ jsonData }")
+        else:
+            print(f"Failed: {res.text}")
 
 def main():
 
@@ -71,7 +74,8 @@ def main():
                  "ipAdd": "ipconfig /all",
                  "topAppMem": 'tasklist /fi "memusage gt 40000"',
                  "hostName": "hostname", "userName": "whoami",
-                 "wireless": "Netsh WLAN show interfaces" }
+                 "wireless": "Netsh WLAN show interfaces",
+                 "cpuLoad": "wmic cpu get loadpercentage" }
 
 
 
@@ -92,14 +96,8 @@ def main():
         thrdVal.join()
         retrnDict[thrdKey]= thrdVal.retrnData
 
-    #for k,v in retrnDict.items():
-    #   print("{}: {}".format(k, v))
-
     #diag = NetdiagClient("10.8.4.128", 30843)
-
     diag = NetdiagClient("127.0.0.1", 8443)
-
-
     diag.postData(retrnDict)
 
     end = time.time()

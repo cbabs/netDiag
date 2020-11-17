@@ -68,44 +68,45 @@ class NetDiag(object):
             "pingNdclDns": self.fltrPing(jsonData["pgNdcDns"]),
             "pingTnGov": self.fltrPing(jsonData["pgTnGov"]),
             "procInfo": self.fltrProcInfo(jsonData["topAppMem"]),
-            "wireless": self.fltrWireless(jsonData["wireless"])
+            "wireless": self.fltrWireless(jsonData["wireless"]),
+            "cpuLoad": self.fltrWireless(jsonData["cpuLoad"])
             }
 
         statusDict = self.createStatusDict(diagRecord)
         diagRecord["statusDict"] = statusDict
 
         self.sendTranToDbs(diagRecord)
-    
+
     # Get vals from windows KV strings
     def getValRegx(self, strng):
-        
+
         retrnStr = re.search(r'(:\s+)(.*)', strng)
-        
-        
+
+
         return retrnStr.group(2)
-    
-    # Get info from info and 
+
+    # Get info from info and
     def procSysInfo(self, sysInfoData):
-        
+
         # Conv strings into array per new line
         sysInfoLines = sysInfoData.splitlines()
-        
+
         retrnDict = {}
-        
+
         valsWanted = ['OS Name:', 'OS Version:', 'Total Physical Memory:',
                       'Available Physical Memory:', 'Virtual Memory: Max Size:',
                       'Virtual Memory: Available:', 'Virtual Memory: In Use:']
-        
-        # Loop over array with desired info strings 
+
+        # Loop over array with desired info strings
         for val in valsWanted:
-            
+
             # Loop over lines and if match, add to dict
             for line in sysInfoLines:
-                
+
                 if val in line:
                     lineVal = self.getValRegx(line)
-                    retrnDict[val.replace(" ", "")] = lineVal 
-     
+                    retrnDict[val.replace(" ", "")] = lineVal
+
         return retrnDict
 
     # Process ping result and gives diag hints
@@ -410,40 +411,40 @@ class NetDiag(object):
                 continue
 
         return retrnDict # Return dict
-    
+
     def fltrWireless(self, data):
 
         # Regex
 
         data = data.splitlines() # Create list from input data
-        
+
         retrnList = [] # List to be returned from func
 
         for line in data:
 
             if not line: continue # If line is empty, continue loop
-            
+
             # Ignore empty lines
-            if re.search(r'[a-z]', line) is None: continue         
-            
+            if re.search(r'[a-z]', line) is None: continue
+
             # Create list of KV pairs
             lineList = line.split(":")
-            
+
             # Assign list items to KV pairs
             k = lineList[0].strip()
-            v = lineList[1].strip() 
-            
+            v = lineList[1].strip()
+
             # Ignore interface number line
             if "There is " in k: continue
 
-            
+
             # If k has name start a new dict for interface info
             if k == "Name":
                 intrfacDict = {}
                 intrfacDict[k]=v
-            
+
             intrfacDict[k]=v
-            
+
             if "Hosted network status" == k:
                 intrfacDict[k]=v
                 retrnList.append(intrfacDict)
