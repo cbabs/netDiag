@@ -7,8 +7,6 @@ from dateutil import parser
 from mongodb import MongoDb
 
 
-
-
 class NetDiag(object):
 
     def __init__(self):
@@ -69,7 +67,7 @@ class NetDiag(object):
             "pingTnGov": self.fltrPing(jsonData["pgTnGov"]),
             "procInfo": self.fltrProcInfo(jsonData["topAppMem"]),
             "wireless": self.fltrWireless(jsonData["wireless"]),
-            "cpuLoad": self.fltrWireless(jsonData["cpuLoad"])
+            "cpuLoad": self.procCpuLoad(jsonData["cpuLoad"])
             }
 
         statusDict = self.createStatusDict(diagRecord)
@@ -106,6 +104,13 @@ class NetDiag(object):
                 if val in line:
                     lineVal = self.getValRegx(line)
                     retrnDict[val.replace(" ", "")] = lineVal
+
+        return retrnDict
+
+    def procCpuLoad(self, cpuInfoData):
+
+        # Conv strings into array per new line
+        retrnDict = {"CpuLoad": re.search(r'[0-9].', cpuInfoData).group(0).rstrip()}
 
         return retrnDict
 
@@ -456,9 +461,7 @@ class NetDiag(object):
     def sendTranToDbs(self, jsnData):
 
         mongoTrans = jsnData
-        #mongoTrans['dateUserRan'] = self.dateMongoProc(mongoTrans['dateUserRan'])
         mongoTrans['dateSrvImpt'] = self.dateMongoProc(mongoTrans['dateSrvImpt'])
-        #mongoTrans['ticketNum'] = int(mongoTrans['ticketNum'])
         self.mDb.addTransac(mongoTrans)
 
 
