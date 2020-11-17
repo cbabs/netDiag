@@ -19,4 +19,4 @@ USER netdiag
 EXPOSE 8443
 ENTRYPOINT ["./netDiag/Server/boot.sh"]
 
-LABEL version="1.26"
+LABEL version="0.26"
