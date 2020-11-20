@@ -43,7 +43,7 @@ def transactions():
 
         if 'dateRange' in request.form:
             dates = request.form['dateRange']
-            
+
             print(f"Data: {dates}")
             print(type(dates))
 
@@ -55,7 +55,7 @@ def transactions():
 
             endDateRgx = re.findall(regxEndDate, dates)
             endDate = datetime.strptime(endDateRgx[0][1], '%Y-%m-%d %H:%M:%S')
-            
+
             print(f"data to getTransDates {begDate} - {endDate}")
 
             webData = db.getTransDates(begDate, endDate)
@@ -86,17 +86,9 @@ def transacs(slug):
     slug = int(slug)  # Convert slug into integer
     data = db.getTransac(slug)  # Get transaction by id
 
-
-
-    #data["dateUserRan"] = data["dateUserRan"].strftime("%H:%M:%S.%f - %b %d %Y")
-    #data["dateSrvImpt"] = data["dateSrvImpt"].strftime("%H:%M:%S.%f - %b %d %Y")
-
     print("\n\n\n")
     print(data)
     print("\n\n\n")
-
-
-
 
     return render_template('transacs.html', data=data)
 

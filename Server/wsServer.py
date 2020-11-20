@@ -18,35 +18,42 @@ class wsServer(object):
         print("Class instantiating")
 
         self.connected = {}
+        self.STATE = {"value": 0}
+        self.USERS = set()
+
+
 
 
         async def srvHandlr(websocket, path):
 
             # Registration
-            
+
 
             msgRecv = await websocket.recv()
             msgRecv = json.loads(msgRecv)
-            
-            
+
+
             hostname = msgRecv["regstrMchine"].replace("\n", "")
             hostname = hostname.strip()
-            
-            
+
+
             self.connected[hostname] = websocket
-            
+
             print(self.connected)
 
             greeting = f"Hello {self.connected}!"
 
-            await websocket.send(greeting)
+            #await websocket.send(greeting)
             print(f"> {greeting}")
+            await websocket.send('{"remExecCmds": ["ipconfig", "ping 8.8.8.8"]}')
+            cmdRecv = await websocket.recv()
+            print(cmdRecv)
 
         start_server = websockets.serve(srvHandlr, 'localhost', 8765)
 
         asyncio.get_event_loop().run_until_complete(start_server)
         asyncio.get_event_loop().run_forever()
-        
+
     def sendCmd(self, hostname, command):
         num = 1
         while num < 5:
@@ -55,17 +62,17 @@ class wsServer(object):
             print(self.connected)
             time.sleep(5000)
             num += 1
-        
-        
+
+
 
 def main():
 
     wss = wsServer()
-    
-    
+
+
 
     wss()
-    
+
     wss.sendCmd("DESKTOP-RGFH0PI", "whoami")
 
 

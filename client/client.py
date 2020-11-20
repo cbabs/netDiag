@@ -96,8 +96,7 @@ def main():
         thrdVal.join()
         retrnDict[thrdKey]= thrdVal.retrnData
 
-    #diag = NetdiagClient("10.8.4.128", 30843)
-    diag = NetdiagClient("127.0.0.1", 8443)
+    diag = NetdiagClient("10.8.4.128", 30843)
     diag.postData(retrnDict)
 
     end = time.time()
