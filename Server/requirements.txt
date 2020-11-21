@@ -4,5 +4,6 @@ flask
 flask_bootstrap
 flask_script
 requests
+aioconsole
 python-dateutil
 waitress
