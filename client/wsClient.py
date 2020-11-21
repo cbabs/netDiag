@@ -32,6 +32,7 @@ async def startClient():
         msgRecv = await websocket.recv()
         print(f"in {msgRecv}")
         if "remExecCmds" in msgRecv:
+            print(msgRecv)
             msgDict = ast.literal_eval(msgRecv)
             print(type(msgDict["remExecCmds"]))
             for exeCmd in msgDict["remExecCmds"]:
