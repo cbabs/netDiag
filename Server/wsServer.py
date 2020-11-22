@@ -5,7 +5,6 @@ from aioconsole import ainput
 
 
 import logging
-from tkinter.test.support import destroy_default_root
 logger = logging.getLogger('websockets')
 logger.setLevel(logging.INFO)
 logger.addHandler(logging.StreamHandler())
@@ -24,7 +23,7 @@ class wsServer(object):
         self.USERS = set()
         self.USERS_MAPPING = []
 
-        self.start_server = websockets.serve(self.srvHandler, 'localhost', 8765)
+        self.start_server = websockets.serve(self.srvHandler, 'localhost', portNum)
 
         asyncio.ensure_future(self.console_input())
         asyncio.get_event_loop().run_until_complete(self.start_server)
@@ -39,6 +38,15 @@ class wsServer(object):
 
     async def unregister(self, websocket):
         self.USERS.remove(websocket)
+
+        
+        userMappingListCopy = self.USERS_MAPPING
+
+        for inx, val in enumerate(userMappingListCopy):
+
+            if val[1] == websocket:
+                self.USERS_MAPPING.pop(inx)
+
 
 
     async def processClientHostname(self, recvData):
@@ -96,7 +104,6 @@ class wsServer(object):
         clntHostname = await self.processClientHostname(msgRecv)
 
         await self.register(clntHostname, websocket)
-        print(self.USERS)
         print(self.USERS_MAPPING)
 
 
