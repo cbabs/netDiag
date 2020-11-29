@@ -1,15 +1,9 @@
 import subprocess
 import requests
 import json
-import re
 from threading import Thread
 
 import datetime
-
-import time
-
-start = time.time()
-
 
 class GetOsCommand(Thread):
 
@@ -34,26 +28,66 @@ class GetOsCommand(Thread):
         self.retrnData = self.retrnData.replace('\r\n', '\n')
 
 
+class JsonFileDb(object):
+    def __init__(self):
+
+        self.reportsJson = {}
+
+        with open("data.json", "r") as dbFile:
+            readData = dbFile.read()
+            if readData: 
+                data = json.loads(readData)
+                self.reportsJson = data
+            dbFile.close()
+
+        print(self.reportsJson)        
+
+    def write(self, dbData):
+        with open("data.json", "w+") as dbFile:
+            json.dump(dbData, dbFile)
+            dbFile.close()
+
 class NetdiagClient(object):
 
     def __init__(self, server=None, port=None):
         self.server = server
         self.port = port
 
+        self.db = JsonFileDb()
 
-    def postData(self, jsonData):
+
+    def postReportDataToSvr(self, jsonData):
         if self.server is None:
             return "No server configured"
 
         serverCall = "http://{}:{}/_api/upload-diag".format(self.server, self.port)
         res = requests.post(serverCall, json = {"netData" : jsonData})
 
-
-
         if res.ok:
             print(f"Data sent:\n{ jsonData }")
+            self.sendExistingReportsToSvr()
         else:
             print(f"Failed: {res.text}")
+            post
+    
+    
+    def postDataToFile(self, jsonData):
+        fileData = self.db.reportsJson
+        if fileData:
+            currentReprtList = fileData['data']
+            currentReprtList.append(jsonData)
+            self.db.write(fileData)
+        else:
+            dataDict = {"data": [jsonData]}
+            self.db.write(dataDict)
+        
+        
+    def sendExistingReportsToSvr(self):
+        fileData = self.db.reportsJson
+        if fileData:
+            for report in fileData['data']:
+                self.postReportDataToSvr(report)
+
 
 def main():
 
@@ -75,8 +109,7 @@ def main():
                  "topAppMem": 'tasklist /fi "memusage gt 40000"',
                  "hostName": "hostname", "userName": "whoami",
                  "wireless": "Netsh WLAN show interfaces",
-                 "cpuLoad": "wmic cpu get loadpercentage" }
-
+                 "cpuLoad": "wmic cpu get loadpercentage"}
 
 
     retrnDict = {"dateUserRan": str(tStamp), "ticketNum": 0000000}
@@ -97,10 +130,8 @@ def main():
         retrnDict[thrdKey]= thrdVal.retrnData
 
     diag = NetdiagClient("10.8.4.128", 30843)
-    diag.postData(retrnDict)
+    diag.postReportDataToSvr(retrnDict)
 
-    end = time.time()
-    print(end - start)
 
 if __name__ == "__main__":
     main()
