@@ -16,14 +16,13 @@ def runOsCmd(osCmd):
 
     return retrnData
 
-#TODO create class
-class WsClient(object):
 
 async def startClient():
     async with websockets.connect(
             'ws://localhost:8765') as websocket:
         hostName = runOsCmd("hostname")
         hostName = hostName.decode('UTF-8').strip().replace('\r\n', '\n') + "+" + str(random.randint(1, 50))
+        print(hostName)
 
         msgSend = {"regstrMchine": hostName}
         msgSend = json.dumps(msgSend)
@@ -37,21 +36,43 @@ async def startClient():
             print(message)
             msgRecv = message
             print(f"in  {msgRecv}")
+            #   await processWsMesg(msgRecv, websocket, hostName)
+
+
+#async def processWsMesg(msgRecv, websocket, hostName):
+            if "run_report" in msgRecv:    
+                try:
+                    print(subprocess.run("client", capture_output=True))
+                except Exception as e:
+                    print('ERROR')
+                    print(e)
+                    await websocket.send(str(e))
+                continue
+
+
             if "remExecCmds" in msgRecv:
                 print(msgRecv)
                 msgDict = ast.literal_eval(msgRecv)
                 print(type(msgDict["remExecCmds"]))
                 for exeCmd in msgDict["remExecCmds"]:
-                    cmdReturn = subprocess.run(exeCmd, capture_output=True)
-                    cmdReturn = cmdReturn.stdout
+                    exeCmd = exeCmd.split(" ")
+                    cmdReturn = None
+                    try:
+                        cmdReturn = subprocess.run(exeCmd, capture_output=True, timeout=20)
+                        cmdReturn = cmdReturn.stdout
+                    except Exception as e:
+                        print(e)
+                        cmdReturn = e
+                    
                     msgToSend = f'{{"{hostName}":{cmdReturn}}}'
                     print(f"out > {msgToSend}")
                     await websocket.send(msgToSend)
-def run_report()
+            
 
 
 
-def main()
+
+def main():
     asyncio.get_event_loop().run_until_complete(startClient())
     asyncio.get_event_loop().run_forever()
 
