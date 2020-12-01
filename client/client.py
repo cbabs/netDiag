@@ -62,14 +62,12 @@ class NetdiagClient(object):
             return "No server configured"
 
         serverCall = "http://{}:{}/_api/upload-diag".format(self.server, self.port)
-        res = requests.post(serverCall, json = {"netData" : jsonData})
-
-        if res.ok:
+        try:
+            res = requests.post(serverCall, json = {"netData" : jsonData})
             print(f"Data sent:\n{ jsonData }")
             self.sendExistingReportsToSvr()
-        else:
+        except:
             print(f"Failed: {res.text}")
-            
     
     
     def postDataToFile(self, jsonData):
@@ -85,9 +83,19 @@ class NetdiagClient(object):
         
     def sendExistingReportsToSvr(self):
         fileData = self.db.reportsJson
-        if fileData:
-            for report in fileData['data']:
-                self.postReportDataToSvr(report)
+
+        if not fileData: return
+        if 'data' in fileData.keys(): return
+
+        jsonFileListCopy = fileData
+
+        for inx, val in enumerate(jsonFileListCopy):
+
+            self.postReportDataToSvr(report)
+            
+            self.fileData['data'].pop(inx) # Delete report from file
+
+            
 
 
 def main():
