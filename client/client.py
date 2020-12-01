@@ -33,7 +33,7 @@ class JsonFileDb(object):
 
         self.reportsJson = {}
 
-        with open("data.json", "r") as dbFile:
+        with open("data.json", "w+") as dbFile:
             readData = dbFile.read()
             if readData: 
                 data = json.loads(readData)
@@ -57,6 +57,7 @@ class NetdiagClient(object):
 
 
     def postReportDataToSvr(self, jsonData):
+        print("running postReportToSvr")
         if self.server is None:
             return "No server configured"
 
@@ -68,7 +69,7 @@ class NetdiagClient(object):
             self.sendExistingReportsToSvr()
         else:
             print(f"Failed: {res.text}")
-            post
+            
     
     
     def postDataToFile(self, jsonData):
@@ -129,7 +130,9 @@ def main():
         thrdVal.join()
         retrnDict[thrdKey]= thrdVal.retrnData
 
-    diag = NetdiagClient("10.8.4.128", 30843)
+    #diag = NetdiagClient("10.8.4.128", 30843)
+    diag = NetdiagClient("127.0.0.1", 8443)
+
     diag.postReportDataToSvr(retrnDict)
 
 
