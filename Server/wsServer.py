@@ -28,6 +28,7 @@ class wsServer(object):
 
         self.queue_receive = "recv_cmds_queue"
         self.queue_reply_cmds = "reply_cmds_queue"
+        
         asyncio.ensure_future(self.start_rabbit_consumer())
         
         asyncio.get_event_loop().run_until_complete(self.start_server)
@@ -64,8 +65,8 @@ class wsServer(object):
 
     async def sendCmdsToClient(self, hostname, cmdsToExecute):
         websocket = await self.getWsObjectByHostname(hostname)
-
-        strOfCmds = f'{{"remExecCmds": {cmdList}}}'
+        print(cmdsToExecute)
+        strOfCmds = f'{{"remExecCmds": ["{cmdsToExecute}"]}}'
 
         await websocket.send(strOfCmds)
 
