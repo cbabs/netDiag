@@ -3,6 +3,8 @@ import requests
 import json
 from threading import Thread
 
+import time
+
 import datetime
 
 class GetOsCommand(Thread):
@@ -13,15 +15,7 @@ class GetOsCommand(Thread):
         super(GetOsCommand, self).__init__()
 
     def run(self):
-        print("Getting OS command for {}".format(self.cmd))
-
-        # Get date, decode and remove extra char return
-        '''
-        try:
-            self.retrnData = subprocess.check_output(self.cmd).decode('UTF-8')
-        except:
-            pass
-        '''
+        #print("Getting OS command for {}".format(self.cmd))
 
         self.retrnData = subprocess.run(self.cmd, capture_output=True)
         self.retrnData = self.retrnData.stdout.decode('UTF-8')
@@ -31,16 +25,29 @@ class GetOsCommand(Thread):
 class JsonFileDb(object):
     def __init__(self):
 
-        self.reportsJson = {}
+        self.reportsJson = self.readf()
 
-        with open("data.json", "w+") as dbFile:
+
+
+    def readf(self):
+        try:
+            with open("data.json", "r") as test:
+                test.close()
+        except:
+            with open("data.json", "w+") as dbFile:
+                dbFile.close
+
+        data = None
+        with open("data.json", "r") as dbFile:
             readData = dbFile.read()
-            if readData: 
+
+            if readData:
                 data = json.loads(readData)
-                self.reportsJson = data
+
             dbFile.close()
 
-        print(self.reportsJson)        
+        return data
+
 
     def write(self, dbData):
         with open("data.json", "w+") as dbFile:
@@ -52,26 +59,30 @@ class NetdiagClient(object):
     def __init__(self, server=None, port=None):
         self.server = server
         self.port = port
+        self.serverCall = "http://{}:{}/_api/upload-diag".format(server, port)
 
         self.db = JsonFileDb()
 
 
     def postReportDataToSvr(self, jsonData):
-        print("running postReportToSvr")
         if self.server is None:
             return "No server configured"
 
-        serverCall = "http://{}:{}/_api/upload-diag".format(self.server, self.port)
         try:
-            res = requests.post(serverCall, json = {"netData" : jsonData})
-            print(f"Data sent:\n{ jsonData }")
-            self.sendExistingReportsToSvr()
-        except:
-            print(f"Failed: {res.text}")
-    
-    
+            res = requests.post(self.serverCall, json = {"netData" : jsonData})
+        except Exception as e:
+            print("Could not connect to server.  Saving report locally")
+            self.postDataToFile(jsonData)
+            print(e)
+            time.sleep(5)
+            return
+
+        self.sendExistingReportsToSvr()
+
+
     def postDataToFile(self, jsonData):
         fileData = self.db.reportsJson
+
         if fileData:
             currentReprtList = fileData['data']
             currentReprtList.append(jsonData)
@@ -79,23 +90,40 @@ class NetdiagClient(object):
         else:
             dataDict = {"data": [jsonData]}
             self.db.write(dataDict)
-        
-        
+
+
     def sendExistingReportsToSvr(self):
         fileData = self.db.reportsJson
 
-        if not fileData: return
-        if 'data' in fileData.keys(): return
+        if not fileData:
+            return
+        if 'data' not in fileData.keys():
+            return
 
-        jsonFileListCopy = fileData
+        print("Old reports exist. Sending to server")
 
-        for inx, val in enumerate(jsonFileListCopy):
+        indexCnt = len(fileData['data'])
 
-            self.postReportDataToSvr(report)
-            
-            self.fileData['data'].pop(inx) # Delete report from file
+        for inx in range(len(fileData['data']), 0, -1):
+            indexCnt -= 1
 
-            
+            print(f"Items in fileData['data]': {len(fileData['data'])}")
+
+            print("Index: " + str(indexCnt))
+
+            jsonData = fileData['data'][indexCnt]
+            try:
+                res = requests.post(self.serverCall, json = {"netData" : jsonData})
+            except Exception as e:
+                print(e)
+                continue
+
+            fileData['data'].pop(indexCnt) # Delete report from file
+
+
+        self.db.write(fileData)
+
+
 
 
 def main():
@@ -138,8 +166,7 @@ def main():
         thrdVal.join()
         retrnDict[thrdKey]= thrdVal.retrnData
 
-    #diag = NetdiagClient("10.8.4.128", 30843)
-    diag = NetdiagClient("127.0.0.1", 8443)
+    diag = NetdiagClient("10.8.4.128", 30843)
 
     diag.postReportDataToSvr(retrnDict)
 
