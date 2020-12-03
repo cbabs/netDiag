@@ -12,6 +12,9 @@ from functools import wraps
 
 from mongodb import MongoDb
 
+from rabbitMq import RabbitMq
+import time
+
 from server import NetDiag
 
 db = MongoDb()
@@ -92,13 +95,40 @@ def transacs(slug):
 
     return render_template('transacs.html', data=data)
 
+
+# Get transaction by number
+@app.route('/cmds', methods=['GET'])
+def get_cmds_page():
+
+
+    return render_template('cmds.html')
+
+
 @app.route('/_api/upload-diag', methods=['POST'])
 def deleteFilter():
 
     data = request.json
 
-    ndiag = NetDiag()
 
-    ndiag.processData(data)
+    NetDiag.processData(data)
 
     return jsonify(result=data)
+
+
+@app.route('/_api/cmds', methods=['POST'])
+def get_command_api():
+
+    data = request.json
+
+    
+
+    print("views,py LINE 12: " + str(data))
+    print(type(data))
+    
+    rabMq = RabbitMq()
+
+    replyData = rabMq.process_api_call(data)
+
+    print(replyData)
+
+    return replyData

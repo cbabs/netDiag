@@ -4,15 +4,11 @@ import websockets
 import json
 import ast
 
-#TODO remove this import after testing done
-import random
 
 def runOsCmd(osCmd):
 
     retrnData = subprocess.run(osCmd, capture_output=True)
-    #retrnData = retrnData.stdout.decode('UTF-8')
     retrnData = retrnData.stdout
-    #retrnData = retrnData.replace('\r\n', '\n')
 
     return retrnData
 
@@ -29,17 +25,13 @@ async def startClient():
 
         await websocket.send(msgSend)
 
-        #TODO Make own func
         async for message in websocket:
 
             print("handler loop " + str(message))
             print(message)
             msgRecv = message
             print(f"in < {msgRecv}")
-            #   await processWsMesg(msgRecv, websocket, hostName)
 
-
-#async def processWsMesg(msgRecv, websocket, hostName):
             if "run_report" in msgRecv:
                 try:
                     print(subprocess.run("client", capture_output=True))
@@ -48,7 +40,6 @@ async def startClient():
                     print(e)
                     await websocket.send(str(e))
                 continue
-
 
             if "remExecCmds" in msgRecv:
                 print(msgRecv)
