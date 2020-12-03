@@ -6,6 +6,63 @@ import json
 from dateutil import parser
 from mongodb import MongoDb
 
+'''
+class RabbitMq(object):
+    def __init__(self):
+        
+        
+        self.queue_receive = "recv_cmds_queue"
+        self.queue_reply_cmds = "reply_cmds_queue"
+        
+        asyncio.ensure_future(self.start_rabbit_consumer())
+        
+        asyncio.get_event_loop().run_until_complete(self.start_server)
+        asyncio.get_event_loop().run_forever()
+
+
+    async def process_rabbit_message(self, message: aio_pika.IncomingMessage):
+        async with message.process():
+            messageStr = str(message.body.decode())
+            messageStr = messageStr.replace("'",'"')
+            messageJson = ast.literal_eval(messageStr)
+            for k,v in messageJson.items():
+                await self.sendCmdsToClient(k,v)
+
+
+    async def send_rabbit_message(self, sendingMsg, routing_key):
+        connection = await aio_pika.connect_robust(
+        "amqp://guest:guest@127.0.0.1/")
+
+        async with connection:
+            channel = await connection.channel()
+
+            # Declaring queue
+            queue = await channel.declare_queue(self.queue_receive,
+                                                auto_delete=True)
+
+            await channel.default_exchange.publish(
+            aio_pika.Message(body=sendingMsg.encode()),
+            routing_key=self.queue_reply_cmds)
+
+
+    async def start_rabbit_consumer(self):
+        connection = await aio_pika.connect_robust(
+        "amqp://guest:guest@127.0.0.1/")
+
+        # Creating channel
+        channel = await connection.channel()
+
+        # Maximum message count which will be
+        # processing at the same time.
+        await channel.set_qos(prefetch_count=100)
+
+        # Declaring queue
+        queue = await channel.declare_queue(self.queue_reply_cmds,
+                                            auto_delete=True)
+
+        # Send message to func
+        await queue.consume(self.process_rabbit_message)
+'''
 
 class NetDiag(object):
 
