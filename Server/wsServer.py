@@ -21,7 +21,7 @@ class wsServer(object):
         self.STATE = {"value": 0}
         self.USERS_MAPPING = []
 
-        self.start_server = websockets.serve(self.srvHandler, 'localhost',
+        self.start_server = websockets.serve(self.srvHandler, '',
                                              portNum, compression=None)
 
         self.lock = asyncio.Lock()
@@ -101,7 +101,7 @@ class wsServer(object):
                                                 auto_delete=True)
 
             await channel.default_exchange.publish(
-            aio_pika.Message(body=sendingMsg.encode()),
+            aio_pika.Message(body=sendingMsg.encode(), expiration=30),
             routing_key=self.queue_reply_cmds)
 
 
@@ -125,8 +125,6 @@ class wsServer(object):
 
 
     async def srvHandler(self, websocket, path):
-        # register(websocket) sends user_event() to websocket
-
         await self.registerClient(websocket)
 
         try:
@@ -135,7 +133,6 @@ class wsServer(object):
                 await self.send_rabbit_message(message,
                 self.queue_reply_cmds)
                 
-
         finally:
             await self.unregister(websocket)
 
