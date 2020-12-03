@@ -36,10 +36,7 @@ async def startClient():
             print(message)
             msgRecv = message
             print(f"in  {msgRecv}")
-            #   await processWsMesg(msgRecv, websocket, hostName)
 
-
-#async def processWsMesg(msgRecv, websocket, hostName):
             if "run_report" in msgRecv:    
                 try:
                     print(subprocess.run("client", capture_output=True))
