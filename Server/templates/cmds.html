@@ -1,0 +1,55 @@
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8" /> 
+        <meta name="viewport"
+              content="width=device-width,  
+                       initial-scale=1.0" /> 
+        <script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" 
+                integrity= 
+"sha512-VZ6m0F78+yo3sbu48gElK4irv2dzPoep8oo9LEjxviigcnnnNvnTOJRSrIhuFk68FMLOpiNz+T77nNY89rnWDg==" 
+                crossorigin="anonymous"></script> 
+        <title>Document</title> 
+    </head> 
+    <body> 
+        <h3 style="color: green; font-size: 25px;"> 
+            Geeks For Geeks 
+        </h3> 
+        <form> 
+            Hostname <input name="hostname" /><br /> 
+            Command <input name="cmd" /><br /> 
+            <button type="submit">Submit</button> 
+        </form> 
+  
+        <script type="text/javascript"> 
+            window.addEventListener("load", () => { 
+                const form = document.querySelector("form"); 
+                form.addEventListener("submit", (e) => { 
+                    e.preventDefault(); 
+                    let data = new FormData(form);
+
+                    var hostName = data.get('hostname');
+                    var cmd = data.get('cmd');
+                    
+                    console.log(hostName)
+
+                    var jsonData = {[hostName]: cmd};
+                    console.log(jsonData);
+                    axios({ 
+                        method: "post", 
+                        url: "/_api/cmds", 
+                        data: jsonData, 
+                    }) 
+                        .then((res) => { 
+                            console.log(res); 
+                        }) 
+                        .catch((err) => { 
+                            throw err; 
+                        }); 
+                }); 
+            }); 
+        </script> 
+    </body> 
+</html> 
