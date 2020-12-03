@@ -3,6 +3,7 @@ import asyncio
 import websockets
 import json
 import ast
+import time
 
 
 def runOsCmd(osCmd):
@@ -12,10 +13,21 @@ def runOsCmd(osCmd):
 
     return retrnData
 
+async def wsHandler():
+    while True:
+        try:
+            await startClient()
+        except:
+            print("Connection failed. Will try again in 60 secs")
+            time.sleep(60)
+        else:
+            break
+
 
 async def startClient():
     async with websockets.connect(
             f'ws://10.100.0.113:8765') as websocket:
+        print("Connected to server!")
         hostName = runOsCmd("hostname")
         hostName = hostName.decode('UTF-8').strip().replace('\r\n', '\n')
         print(hostName)
@@ -62,7 +74,7 @@ async def startClient():
 
 def main():
     print(__name__)
-    asyncio.get_event_loop().run_until_complete(startClient())
+    asyncio.get_event_loop().run_until_complete(wsHandler())
     asyncio.get_event_loop().run_forever()
 
 
