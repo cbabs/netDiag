@@ -26,7 +26,7 @@ class wsServer(object):
 
         self.lock = asyncio.Lock()
 
-        self.RABBIT_HOST = os.getenv(key, "127.0.0.1")
+        self.RABBIT_HOST = os.getenv(RABBIT_HOST)
 
         self.queue_receive = "recv_cmds_queue"
         self.queue_reply_cmds = "reply_cmds_queue"
