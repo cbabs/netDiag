@@ -1,7 +1,6 @@
 import asyncio
 import websockets
 import json
-from aioconsole import ainput
 import aio_pika
 import ast
 
