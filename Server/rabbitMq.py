@@ -4,9 +4,11 @@ import os
 
 class RabbitMq(object):
     def __init__(self, timeout=20):
-        self.RABBIT_HOST = os.getenv('RABBIT_HOST', "127.0.0.1")
-        
-        
+
+        self.RABBIT_HOST = os.getenv('RABBIT_HOST', "127.0.0.1")      
+        self.rabmq_node = f'amqp://{self.RABBIT_HOST}'
+        self.pike_params = pika.URLParameters(self.rabmq_node)
+
         self.queue_receive = "recv_cmds_queue"
         self.queue_reply_cmds = "reply_cmds_queue"
 
@@ -15,8 +17,9 @@ class RabbitMq(object):
 
     def blockingSender(self, msg):
         msg = str(msg)
-        connection = pika.BlockingConnection(f"amqp://guest:guest@{self.RABBIT_HOST}/")
+        connection = pika.BlockingConnection(self.pike_params)
         channel = connection.channel()
+        channel.queue_declare(self.queue_receive)
         channel.basic_publish(exchange='', routing_key=self.queue_receive,
                 properties=pika.BasicProperties(expiration='30000'),
                 body=msg)
@@ -25,8 +28,9 @@ class RabbitMq(object):
 
     
     def blockingReceive(self, hostname):
-        connection = pika.BlockingConnection(f"amqp://guest:guest@{self.RABBIT_HOST}/")
+        connection = pika.BlockingConnection(self.pike_params)
         channel = connection.channel()
+        channel.queue_declare(self.queue_reply_cmds)
         start = time.time()
         end = time.time()
 
