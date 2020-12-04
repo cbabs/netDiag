@@ -25,6 +25,8 @@ class wsServer(object):
 
         self.lock = asyncio.Lock()
 
+        self.RABBIT_HOST = os.getenv(key, "127.0.0.1")
+
         self.queue_receive = "recv_cmds_queue"
         self.queue_reply_cmds = "reply_cmds_queue"
         
@@ -88,7 +90,7 @@ class wsServer(object):
 
     async def send_rabbit_message(self, sendingMsg, routing_key):
         connection = await aio_pika.connect_robust(
-        "amqp://guest:guest@127.0.0.1/")
+        f"amqp://guest:guest@{self.rabbitHost}/")
 
         async with connection:
             routing_key = self.queue_receive
@@ -106,7 +108,7 @@ class wsServer(object):
 
     async def start_rabbit_consumer(self):
         connection = await aio_pika.connect_robust(
-        "amqp://guest:guest@127.0.0.1/")
+        f"amqp://guest:guest@{self.rabbitHost}/")
 
         # Creating channel
         channel = await connection.channel()
