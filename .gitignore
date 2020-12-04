@@ -117,3 +117,4 @@ test*
 ./Server/leslie/*
 Server/templates/cmds.bak.html
 Server/data.json
+client/data.json
