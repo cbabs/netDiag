@@ -1,19 +1,20 @@
 FROM python:3.8-slim
 
-RUN adduser -D netdiag
+#RUN adduser --disabled-password --gecos '' netdiag
 
-WORKDIR /home/netdiag
+#WORKDIR /home/netdiag
 
-RUN apk update && apk upgrade && \
-    apk add --no-cache git
+RUN apt update && apt upgrade && apt install wget -y
 
-RUN python -m venv venv
-RUN https://github.com/cbabs/netDiag/raw/master/Server/wsServer.py
-RUN venv/bin/pip install -r ./netDiag/Server/requirements-wss.txt
+WORKDIR /usr/src/app
 
-RUN chown -R netdiag:netdiag ./
-USER netdiag
+#RUN python -m venv venv
+RUN wget https://github.com/cbabs/netDiag/raw/master/Server/wsServer.py
+RUN wget https://github.com/cbabs/netDiag/raw/master/Server/requirements-wss.txt
+RUN pip install -r /usr/src/app/requirements-wss.txt
+
+#RUN chown -R netdiag:netdiag ./
+#USER netdiag
 
 EXPOSE 8765
-ENTRYPOINT ["python ./netDiag/Server/wsServer.py"]
-
+CMD [ "python", "/usr/src/app/wsServer.py" ]
