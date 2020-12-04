@@ -115,3 +115,5 @@ test*
 
 # Ignore Leslie UI files
 ./Server/leslie/*
+Server/templates/cmds.bak.html
+Server/data.json
