@@ -91,7 +91,7 @@ class wsServer(object):
 
     async def send_rabbit_message(self, sendingMsg, routing_key):
         connection = await aio_pika.connect_robust(
-        f"amqp://guest:guest@{self.rabbitHost}/")
+        f"amqp://guest:guest@{self.RABBIT_HOST}/")
 
         async with connection:
             routing_key = self.queue_receive
@@ -109,7 +109,7 @@ class wsServer(object):
 
     async def start_rabbit_consumer(self):
         connection = await aio_pika.connect_robust(
-        f"amqp://guest:guest@{self.rabbitHost}/")
+        f"amqp://guest:guest@{self.RABBIT_HOST}/")
 
         # Creating channel
         channel = await connection.channel()
