@@ -19,7 +19,7 @@ class RabbitMq(object):
         msg = str(msg)
         connection = pika.BlockingConnection(self.pike_params)
         channel = connection.channel()
-        channel.queue_declare(self.queue_receive)
+        channel.queue_declare(self.queue_receive, auto_delete=True)
         channel.basic_publish(exchange='', routing_key=self.queue_receive,
                 properties=pika.BasicProperties(expiration='30000'),
                 body=msg)
@@ -30,7 +30,7 @@ class RabbitMq(object):
     def blockingReceive(self, hostname):
         connection = pika.BlockingConnection(self.pike_params)
         channel = connection.channel()
-        channel.queue_declare(self.queue_reply_cmds)
+        channel.queue_declare(self.queue_reply_cmds, auto_delete=True)
         start = time.time()
         end = time.time()
 
