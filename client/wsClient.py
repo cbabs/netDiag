@@ -17,8 +17,9 @@ async def wsHandler():
     while True:
         try:
             await startClient()
-        except:
+        except Exception as e:
             print("Connection failed. Will try again in 60 secs")
+            print(e)
             time.sleep(60)
         else:
             break
@@ -26,7 +27,7 @@ async def wsHandler():
 
 async def startClient():
     async with websockets.connect(
-            f'ws://10.100.0.113:8765') as websocket:
+            f'wss://netappswss.napps.tn.gov:443') as websocket:
         print("Connected to server!")
         hostName = runOsCmd("hostname")
         hostName = hostName.decode('UTF-8').strip().replace('\r\n', '\n')
