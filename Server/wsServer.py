@@ -3,6 +3,7 @@ import websockets
 import json
 import aio_pika
 import ast
+import os
 
 
 import logging
