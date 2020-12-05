@@ -111,8 +111,9 @@ def deleteFilter():
 
     data = request.json
 
+    nDiag = NetDiag()
 
-    NetDiag.processData(data)
+    nDiag.processData(data)
 
     return jsonify(result=data)
 
@@ -125,6 +126,6 @@ def get_command_api():
     rabMq = RabbitMq()
 
     replyData = rabMq.process_api_call(data)
-    replyData = ast.literal_eval(replyData.decode()) 
+    replyData = ast.literal_eval(replyData.decode())
 
     return jsonify(result=replyData)
