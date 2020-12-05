@@ -14,14 +14,19 @@
         <title>Document</title> 
     </head> 
     <body> 
-        <h3 style="color: green; font-size: 25px;"> 
-            Geeks For Geeks 
+        <h3 style="color: black; font-size: 25px;"> 
+            Execute command on remote machine connected to netDiag.<br>
+            To run remote machine report put "run_report" in Command box. 
         </h3> 
         <form> 
             Hostname <input name="hostname" /><br /> 
             Command <input name="cmd" /><br /> 
             <button type="submit">Submit</button> 
         </form> 
+        <br><br><br>
+        <div id="response">
+
+        </div>
   
         <script type="text/javascript"> 
             window.addEventListener("load", () => { 
@@ -42,7 +47,10 @@
                         url: "/_api/cmds", 
                         data: jsonData, 
                     }) 
-                        .then((res) => { 
+                        .then((res) => {
+                            console.log(hostName);
+                            document.getElementById('response').innerHTML = 
+                                res.data.result[hostName].replace(/\n/g, '<br />');
                             console.log(res); 
                         }) 
                         .catch((err) => { 

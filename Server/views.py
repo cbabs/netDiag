@@ -17,6 +17,8 @@ import time
 
 from server import NetDiag
 
+import ast
+
 db = MongoDb()
 
 def is_list(value):
@@ -120,15 +122,9 @@ def get_command_api():
 
     data = request.json
 
-    
-
-    print("views,py LINE 12: " + str(data))
-    print(type(data))
-    
     rabMq = RabbitMq()
 
     replyData = rabMq.process_api_call(data)
+    replyData = ast.literal_eval(replyData.decode()) 
 
-    print(replyData)
-
-    return replyData
+    return jsonify(result=replyData)

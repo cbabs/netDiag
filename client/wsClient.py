@@ -68,9 +68,9 @@ async def startClient():
                         print(e)
                         cmdReturn = e
 
-                    msgToSend = f'{{"{hostName}":{cmdReturn}}}'
-                    print(f"out > {msgToSend}")
-                    await websocket.send(msgToSend)
+                    msgToSend = {hostName: cmdReturn.decode()}
+
+                    await websocket.send(str(msgToSend))
 
 
 def main():
