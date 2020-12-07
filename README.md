@@ -6,6 +6,7 @@ To just use reporting function, you only need flask container and mongo.  If you
 To build the clients wsClient and client, go into client dir and tyoe:
 
 pyinstaller client.py --clean -F
+
 pyinstaller wsClient.py --clean -F
 
 This will build binaries for whatever system you are on at build time.
